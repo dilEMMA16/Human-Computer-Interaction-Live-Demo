@@ -4,150 +4,6 @@ webpackJsonp([0],{
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomePage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__palette_palette__ = __webpack_require__(198);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__custompalette_custompalette__ = __webpack_require__(105);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__saved_saved__ = __webpack_require__(40);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-
-var HomePage = /** @class */ (function () {
-    function HomePage(navCtrl) {
-        this.navCtrl = navCtrl;
-    }
-    HomePage.prototype.savedThemes = function () {
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_4__saved_saved__["a" /* SavedPage */], {
-            dummy2: "dummy2"
-        });
-    };
-    HomePage.prototype.customThemeChosen = function () {
-        var blues = ["#5d667b", "#45547b", "#5765b0", "#39457b", "#236c75", "#34a0ae", "#040f7b", "#6dbdc9", "#7ab2b9", "#678997", "#80a9b0", "#6683d0", "#82bdd3", "#33377b", "#61808f", "#64c8c6", "#121f7b", "#a4afe3", "#477aed", "#7baefb", "#5a717b", "#2360bf", "#6f9df8", "#aacaf4", "#6f7fbe", "#60b5c1", "#4d687b", "#7698b8", "#2badb8", "#1f40b8"];
-        var browns = ["#968663", "#7b6156", "#7b6972", "#7b6e58", "#7b6a72", "#baa994", "#594446", "#bca67f", "#67697b", "#7b4600", "#7b625e", "#7b403b", "#7b5a43", "#7b4424", "#b7866d", "#7b615b", "#7b5650"];
-        var greens = ["#617b66", "#848b8c", "#727b63", "#6c7b4c", "#c5be8b", "#848b8c", "#8cae87", "#7acdad", "#d5ef9a", "#afc185", "#5c7b69", "#6c818f", "#74ab86", "#2e717b", "#589a1f", "#157b5c", "#617b62", "#787b39", "#acd247", "#83d780", "#68ad74", "#cae67c", "#caeff4", "#61c277", "#499259", "#647a7b", "#b8b14e", "#77b800"];
-        var yellows = ["#d3af86", "#e3a83e", "#b79533", "#fdcb73", "#c29a50", "#d9a42e", "#f8e997", "#bfb06b", "#d6a149", "#ffb822", "#ffbd4a", "#feba08", "#dbff6b"];
-        var creams = ["#e3d6cc", "#c9beb5", "#e3d6cc", "#cdb98f", "#e1d9d3"];
-        var purples = ["#918696", "#9a82ae", "#524c7b", "#a275a5", "#b958c0", "#3e427d", "#57017b", "#584e9a", "#7a3a7b", "#6f467b", "#4b407b", "#7b1877", "#b760e6", "#dfd1ef", "#5546b8", "#9e38b8", "#575db8", "#cb07bd"];
-        var oranges = ["#bf834e", "#8e6350", "#eb7244", "#e98441", "#cd745f", "#ee9547", "#d3725b", "#cd7746", "#eb8119", "#ab6141", "#ba6a00", "#e8926e", "#ffab37"];
-        var reds = ["#c94300", "#7b1416", "#d7000b", "#8c412a", "#e76753", "#ea4627", "#b80716"];
-        var pinks = ["#7b536e", "#d9b1b0", "#f3bbaa", "#a16c6a", "#745a7b", "#e76753", "#e8926e", "#7b3446", "#ff9aac", "#ef447a", "#cdaad2", "#b83e81"];
-        var grays = ["#c5bde1", "#a8a8a8", "#78787b"];
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_3__custompalette_custompalette__["a" /* CustomPalettePage */], {
-            'blues': blues,
-            'browns': browns,
-            'greens': greens,
-            'yellows': yellows,
-            'creams': creams,
-            'purples': purples,
-            'oranges': oranges,
-            'reds': reds,
-            'pinks': pinks,
-            'grays': grays
-        });
-    };
-    HomePage.prototype.navigateToPalettePage = function (theme) {
-        var palette1;
-        var palette2;
-        var palette3;
-        var palette4;
-        //based on what theme is = pass in palettes
-        if (theme.includes("natural")) {
-            palette1 = ["#baa994", "#968663", "#5d667b", "#617b66"];
-            palette2 = ["#7b6156", "#e3d6cc", "#848b8c", "#c9beb5"];
-            palette3 = ["#918696", "#7b6972", "#727b63", "#d3af86"];
-            palette4 = ["#617b66", "#c9beb5", "#d3af86", "#7b6e58"];
-        }
-        if (theme.includes("summer")) {
-            palette1 = ["#60d1d3", "#477aed", "#ef447a", "#cae67c"];
-            palette2 = ["#acd247", "#e76753", "#e8926e", "#f8e997"];
-            palette3 = ["#b760e6", "#68ad74", "#6f9df8", "#cae67c"];
-            palette4 = ["#ef447a", "#ffab37", "#6f9df8", "#cae67c"];
-        }
-        if (theme.includes("fall")) {
-            palette1 = ["#4b407b", "#5a717b", "#787b39", "#7b4424"];
-            palette2 = ["#7b5a43", "#787b39", "#8c412a", "#ba6a00"];
-            palette3 = ["#787b39", "#7b4424", "#d9a42e", "#cdb98f"];
-            palette4 = ["#7b615b", "#7b4600", "#ba6a00", "#cdb98f"];
-        }
-        if (theme.includes("tech")) {
-            palette1 = ["#263c75", "#34a0ae", "#7acdad", "#a8a8a8"];
-            palette2 = ["#040f7b", "#eb7244", "#6dbdc9", "#b958c0"];
-            palette3 = ["#7ab2b9", "#d5ef9a", "#fdcb73", "#e98441"];
-            palette4 = ["#678997", "#a275a5", "#cd745f", "#f3bbaa"];
-        }
-        if (theme.includes("warm")) {
-            palette1 = ["#d9a42e", "#e76753", "#ba6a00", "#7b4600"];
-            palette2 = ["#e8926e", "#7b625e", "#bf834e", "#eb8119"];
-            palette3 = ["#f8e997", "#bfb06b", "#d6a149", "#7b403b"];
-            palette4 = ["#c94300", "#7b1416", "#d7000b", "#ffb822"];
-        }
-        if (theme.includes("sophisticated")) {
-            palette1 = ["#ee9547", "#d3725b", "#6683d0", "#82bdd3"];
-            palette2 = ["#afc185", "#80a9b0", "#3e427d", "#baa994"];
-            palette3 = ["#cd7746", "#594446", "#bca67f", "#a16c6a"];
-            palette4 = ["#c29a50", "#e3d6cc", "#33377b", "#61808f"];
-        }
-        if (theme.includes("wellbeing")) {
-            palette1 = ["#caeff4", "#aacaf4", "#cdaad2", "#dfd1ef"];
-            palette2 = ["#caeff4", "#6f7fbe", "#ee9547", "#647a7b"];
-            palette3 = ["#dfd1ef", "#60b5c1", "#4d687b", "#647a7b"];
-            palette4 = ["#ffbd4a", "#acd247", "#ee9547", "#4d687b"];
-        }
-        if (theme.includes("bold")) {
-            palette1 = ["#ee9547", "#5546b8", "#b83e81", "#4aae4e"];
-            palette2 = ["#ee9547", "#5546b8", "#9e38b8", "#7698b8"];
-            palette3 = ["#2badb8", "#ea4627", "#b80716", "#575db8"];
-            palette4 = ["#7698b8", "#dbff6b", "#575db8", "#cb07bd"];
-        }
-        if (theme.includes("cool")) {
-            palette1 = ["#64c8c6", "#5c7b69", "#6c818f", "#74ab86"];
-            palette2 = ["#121g7b", "#a4afe3", "#745a7b", "#2e717b"];
-            palette3 = ["#a4afe3", "#57017b", "#584e9a", "#2e717b"];
-            palette4 = ["#74ab86", "#2e717b", "#584e9a", "#7baefb"];
-        }
-        if (theme.includes("rustic")) {
-            palette1 = ["#bf834e", "#7b536e", "#55707b", "#6c7b4c"];
-            palette2 = ["#c5bde1", "#c5be8b", "#5765b0", "#c9beb5"];
-            palette3 = ["#7b536e", "#c5be8b", "#848b8c", "#8e6350"];
-            palette4 = ["#d9b1b0", "#848b8c", "#5765b0", "#6c7b4c"];
-        }
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__palette_palette__["a" /* PalettePage */], {
-            'data': theme,
-            'palette1': palette1,
-            'palette2': palette2,
-            'palette3': palette3,
-            'palette4': palette4
-        });
-    };
-    HomePage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-home',template:/*ion-inline-start:"C:\Users\emmas\Desktop\hucomm\src\pages\home\home.html"*/'<!--\n\n<ion-header>\n\n\n\n</ion-header> -->\n\n\n\n<ion-content no-padding>\n\n  <div (click)="savedThemes()" style="background-color:#d3d3d3;z-index: 6;color:white;position:fixed;left:20px;top:0px;padding:10px;">saved themes\n\n  </div>\n\n  <ion-grid class="vertical-align-content" style="padding:0px;">\n\n\n\n\n\n    <ion-row style="width:100%; text-align:center; padding-top:20px;height:15vh;margin:5px;font-style: italic;">\n\n      <ion-col col-12 style="padding:20px;font-size:140%;">\n\n        choose a category\n\n      </ion-col>\n\n    </ion-row>\n\n        <!-- <ion-col col-3></ion-col> -->\n\n\n\n    <ion-row class="align-bottom" style="margin-bottom:5px;">\n\n      <ion-col col-4  (click)="navigateToPalettePage(\'assets/imgs/natural.png\')"><img  src="assets/imgs/natural.png"></ion-col>\n\n      <ion-col col-4 (click)="navigateToPalettePage(\'assets/imgs/summer.png\')"><img  src="assets/imgs/summer.png"></ion-col>\n\n      <ion-col col-4 (click)="navigateToPalettePage(\'assets/imgs/fall.png\')"><img  src="assets/imgs/fall.png"></ion-col>\n\n    </ion-row>\n\n    <ion-row style="height:5vh; margin-bottom:15px;">\n\n      <ion-col col-4 (click)="navigateToPalettePage(\'assets/imgs/natural.png\')">natural<br><br></ion-col>\n\n      <ion-col col-4 (click)="navigateToPalettePage(\'assets/imgs/summer.png\')">summer<br><br></ion-col>\n\n      <ion-col col-4 (click)="navigateToPalettePage(\'assets/imgs/fall.png\')">fall<br><br></ion-col>\n\n    </ion-row>\n\n    <ion-row class="align-bottom" style="margin-bottom:5px;">\n\n      <ion-col col-4 (click)="navigateToPalettePage(\'assets/imgs/tech.png\')"><img  src="assets/imgs/tech.png"></ion-col>\n\n      <ion-col col-4 (click)="navigateToPalettePage(\'assets/imgs/warm.png\')"><img  src="assets/imgs/warm.png"></ion-col>\n\n      <ion-col col-4 (click)="navigateToPalettePage(\'assets/imgs/sophisticated.png\')"><img  src="assets/imgs/sophisticated.png"></ion-col>\n\n    </ion-row>\n\n    <ion-row style="height:5vh; margin-bottom:15px;">\n\n      <ion-col col-4 (click)="navigateToPalettePage(\'assets/imgs/tech.png\')">tech<br><br></ion-col>\n\n      <ion-col col-4 (click)="navigateToPalettePage(\'assets/imgs/warm.png\')">warm<br><br></ion-col>\n\n      <ion-col col-4 (click)="navigateToPalettePage(\'assets/imgs/sophisticated.png\')">sophisticated<br><br></ion-col>\n\n    </ion-row>\n\n    <ion-row class="align-bottom" style="margin-bottom:5px;">\n\n      <ion-col col-4 (click)="navigateToPalettePage(\'assets/imgs/wellbeing.png\')"><img src="assets/imgs/wellbeing.png"></ion-col>\n\n      <ion-col col-4 (click)="navigateToPalettePage(\'assets/imgs/bold.png\')"><img  src="assets/imgs/bold.png"></ion-col>\n\n      <ion-col col-4 (click)="navigateToPalettePage(\'assets/imgs/cool.png\')"><img  src="assets/imgs/cool.png"></ion-col>\n\n    </ion-row>\n\n    <ion-row style="height:5vh; margin-bottom:15px;">\n\n      <ion-col col-4 (click)="navigateToPalettePage(\'assets/imgs/wellbeing.png\')">wellbeing<br><br></ion-col>\n\n      <ion-col col-4 (click)="navigateToPalettePage(\'assets/imgs/bold.png\')">bold<br><br></ion-col>\n\n      <ion-col col-4 (click)="navigateToPalettePage(\'assets/imgs/cool.png\')">cool<br><br></ion-col>\n\n    </ion-row>\n\n    <ion-row class="align-bottom" style="margin-bottom:5px;">\n\n      <ion-col col-4 (click)="navigateToPalettePage(\'assets/imgs/rustic.png\')"><img src="assets/imgs/rustic.png"></ion-col>\n\n      <ion-col col-4 ><img  src="assets/imgs/random.png"></ion-col>\n\n      <ion-col col-4 (click) = "customThemeChosen()"><img  src="assets/imgs/custom.png"></ion-col>\n\n    </ion-row>\n\n    <ion-row style="height:5vh; margin-bottom:15px;">\n\n      <ion-col col-4 (click)="navigateToPalettePage(\'assets/imgs/rustic.png\')">rustic<br><br></ion-col>\n\n      <ion-col col-4>random<br><br></ion-col>\n\n      <ion-col col-4 (click) = "customThemeChosen()">custom<br><br></ion-col>\n\n    </ion-row>\n\n    <hr>\n\n    <ion-row id="hometop" style="position: fixed; width:100%; bottom:0px;border-top:1px solid #cecece;vertical-align:top ;">\n\n      <!-- <ion-col col-3></ion-col> -->\n\n\n\n      <ion-col col-4 style=" padding:15px;font-size:140%;background-color:#f7f4f4;height:100%;">\n\n        category\n\n      </ion-col>\n\n      <ion-col col-4 style="padding:15px;font-size:140%;background-color: #e8e5e5;height:100%;">\n\n        colors\n\n      </ion-col>\n\n      <ion-col col-4 style="padding:15px;font-size:140%;background-color: #e8e5e5;height:100%;">\n\n        fonts\n\n      </ion-col>\n\n    </ion-row>\n\n  </ion-grid>\n\n\n\n</ion-content>\n\n<!-- =======\n\n<ion-header>\n\n\n\n</ion-header>\n\n\n\n<ion-content no-padding>\n\n  <ion-grid class="vertical-align-content">\n\n\n\n    <ion-row id="hometop">\n\n\n\n\n\n      <ion-col col-3></ion-col>\n\n      <ion-col col-2>\n\n        <div class="circle" style="background-color:#9c9c9c; color:white;">theme</div>\n\n      </ion-col>\n\n      <ion-col col-2>\n\n        <div class="circle">colors</div>\n\n      </ion-col>\n\n      <ion-col col-2>\n\n        <div class="circle">fonts</div>\n\n      </ion-col>\n\n      <ion-col col-3></ion-col>\n\n      <div  style="width:100%; height:10vw; text-align:center; padding-top: 20px; font-size:140%">choose a theme</div>\n\n    </ion-row>\n\n    <ion-row class="align-bottom" style="margin-bottom:5px;">\n\n      <ion-col col-4  (click)="navigateToPalettePage(\'assets/imgs/natural.png\')"><img  src="assets/imgs/natural.png"></ion-col>\n\n      <ion-col col-4 (click)="navigateToPalettePage(\'assets/imgs/summer.png\')"><img  src="assets/imgs/summer.png"></ion-col>\n\n      <ion-col col-4 (click)="navigateToPalettePage(\'assets/imgs/fall.png\')"><img  src="assets/imgs/fall.png"></ion-col>\n\n    </ion-row>\n\n    <ion-row style="height:5vh; margin-bottom:15px;">\n\n      <ion-col col-4 (click)="navigateToPalettePage(\'assets/imgs/natural.png\')">natural<br><br></ion-col>\n\n      <ion-col col-4 (click)="navigateToPalettePage(\'assets/imgs/summer.png\')">summer<br><br></ion-col>\n\n      <ion-col col-4 (click)="navigateToPalettePage(\'assets/imgs/fall.png\')">fall<br><br></ion-col>\n\n    </ion-row>\n\n    <ion-row class="align-bottom" style="margin-bottom:5px;">\n\n      <ion-col col-4 (click)="navigateToPalettePage(\'assets/imgs/tech.png\')"><img  src="assets/imgs/tech.png"></ion-col>\n\n      <ion-col col-4 (click)="navigateToPalettePage(\'assets/imgs/warm.png\')"><img  src="assets/imgs/warm.png"></ion-col>\n\n      <ion-col col-4 (click)="navigateToPalettePage(\'assets/imgs/sophisticated.png\')"><img  src="assets/imgs/sophisticated.png"></ion-col>\n\n    </ion-row>\n\n    <ion-row style="height:5vh; margin-bottom:15px;">\n\n      <ion-col col-4 (click)="navigateToPalettePage(\'assets/imgs/tech.png\')">tech<br><br></ion-col>\n\n      <ion-col col-4 (click)="navigateToPalettePage(\'assets/imgs/warm.png\')">warm<br><br></ion-col>\n\n      <ion-col col-4 (click)="navigateToPalettePage(\'assets/imgs/sophisticated.png\')">sophisticated<br><br></ion-col>\n\n    </ion-row>\n\n    <ion-row class="align-bottom" style="margin-bottom:5px;">\n\n      <ion-col col-4 (click)="navigateToPalettePage(\'assets/imgs/wellbeing.png\')"><img src="assets/imgs/wellbeing.png"></ion-col>\n\n      <ion-col col-4 (click)="navigateToPalettePage(\'assets/imgs/bold.png\')"><img  src="assets/imgs/bold.png"></ion-col>\n\n      <ion-col col-4 (click)="navigateToPalettePage(\'assets/imgs/cool.png\')"><img  src="assets/imgs/cool.png"></ion-col>\n\n    </ion-row>\n\n    <ion-row style="height:5vh; margin-bottom:15px;">\n\n      <ion-col col-4 (click)="navigateToPalettePage(\'assets/imgs/wellbeing.png\')">wellbeing<br><br></ion-col>\n\n      <ion-col col-4 (click)="navigateToPalettePage(\'assets/imgs/bold.png\')">bold<br><br></ion-col>\n\n      <ion-col col-4 (click)="navigateToPalettePage(\'assets/imgs/cool.png\')">cool<br><br></ion-col>\n\n    </ion-row>\n\n    <ion-row class="align-bottom" style="margin-bottom:5px;">\n\n      <ion-col col-4 (click)="navigateToPalettePage(\'assets/imgs/rustic.png\')"><img src="assets/imgs/rustic.png"></ion-col>\n\n      <ion-col col-4 ><img  src="assets/imgs/random.png"></ion-col>\n\n      <ion-col col-4 (click) = "customThemeChosen()"><img  src="assets/imgs/custom.png"></ion-col>\n\n    </ion-row>\n\n    <ion-row style="height:5vh; margin-bottom:15px;">\n\n      <ion-col col-4 (click)="navigateToPalettePage(\'assets/imgs/rustic.png\')">rustic<br><br></ion-col>\n\n      <ion-col col-4>random<br><br></ion-col>\n\n      <ion-col col-4 (click) = "customThemeChosen()">custom<br><br></ion-col>\n\n    </ion-row>\n\n  </ion-grid>\n\n\n\n</ion-content>\n\n>>>>>>> ae28ee429d8b33d1a53fc6b6265df2434a56a54d -->\n\n'/*ion-inline-end:"C:\Users\emmas\Desktop\hucomm\src\pages\home\home.html"*/
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */]])
-    ], HomePage);
-    return HomePage;
-}());
-
-//# sourceMappingURL=home.js.map
-
-/***/ }),
-
-/***/ 104:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SaveThemeProvider; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ionic_storage__ = __webpack_require__(200);
@@ -235,7 +91,7 @@ var SaveThemeProvider = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 105:
+/***/ 104:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -381,7 +237,7 @@ var CustomPalettePage = /** @class */ (function () {
     };
     CustomPalettePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-custompalette',template:/*ion-inline-start:"C:\Users\emmas\Desktop\hucomm\src\pages\custompalette\custompalette.html"*/'<ion-header>\n\n<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">\n\n</ion-header>\n\n\n\n<ion-content no-padding>\n\n  <div (click)="savedThemes()" style="background-color:#d3d3d3;z-index: 6;color:white;position:fixed;left:20px;top:0px;padding:10px;">saved themes\n\n  </div>\n\n  <ion-grid class="vertical-align-content" style="padding:0px;">\n\n\n\n    <!-- <ion-row id="hometop" style="vertical-align:top ;">\n\n\n\n      <ion-col col-4 (click)="navigateToHomePage()" style="border-left:2px solid #c9c9c9;border-bottom:2px solid #c9c9c9;padding:12.5px;border-top:2px solid #c9c9c9;font-size:140%;color: white;">\n\n        <img  id=chosenTheme src= "assets/imgs/custom.png">\n\n      </ion-col>\n\n      <ion-col col-4 style="border-bottom:2px solid #c9c9c9;border-top:2px solid #c9c9c9;padding:20px;font-size:140%;color: white;background-color: #c9c9c9;">\n\n        colors\n\n      </ion-col>\n\n      <ion-col col-4 style="border-bottom:2px solid #c9c9c9;border-top:2px solid #c9c9c9;border-right:2px solid #c9c9c9;padding:20px;font-size:140%;">\n\n        fonts\n\n      </ion-col>\n\n    </ion-row> -->\n\n    <ion-row style="width:100%; text-align:center; padding-top:20px;height:15vh;margin:5px;font-style: italic;">\n\n      <ion-col col-12 style="padding:20px;font-size:140%;">\n\n        choose four colors\n\n      </ion-col>\n\n    </ion-row>\n\n    <!-- <ion-row style="position:relative;">\n\n\n\n      <ion-col col-3></ion-col>\n\n      <ion-col col-2>\n\n        <div class="circle" (click)="navigateToHomePage()" style="padding-top:11px !important;"><img  id=chosenTheme src= "assets/imgs/custom.png"></div>\n\n      </ion-col>\n\n      <ion-col col-2>\n\n        <div class="circle" style="background-color:#9c9c9c; color:white;">colors</div>\n\n      </ion-col>\n\n      <ion-col col-2>\n\n        <div class="circle">fonts</div>\n\n      </ion-col>\n\n      <ion-col col-3></ion-col>\n\n      <div  style="width:100%; height:9vh; text-align:center; padding-top: 20px; font-size:140%">choose four colors</div>\n\n    </ion-row> -->\n\n    <br>\n\n    <ion-row >\n\n      <ion-col class = "col col-12" style="width:21%;border-bottom: 1px solid #cecece; padding-bottom: 10px;margin-bottom:40px;">reds</ion-col>\n\n    </ion-row>\n\n    <ion-row>\n\n      <div style="width: 100%;">\n\n        <div *ngFor="let color of reds" style="width:25%;float:left;height:90px; margin: auto;" >\n\n              <div class="tear" (click) = "selectColor(color)" [id]="color" [style.background-color]="color" style="display:block !important;margin: 20px auto auto; padding:3px;"></div>\n\n              <div class="" style="width: 25vw !important; height:100%; display:none;" (click)="selectColor(color)" id="{{color}}splat">\n\n              </div>\n\n        </div>\n\n      </div>\n\n    </ion-row>\n\n    <br><br>\n\n    <ion-row >\n\n      <ion-col class = "col col-12" style="width:21%;border-bottom: 1px solid #cecece; padding-bottom: 10px;margin-bottom:40px;">oranges</ion-col>\n\n    </ion-row>\n\n\n\n    <ion-row>\n\n      <div style="width: 100%;">\n\n        <div *ngFor="let color of oranges; let i = index" style="height:90px;width:25%;float:left; margin: auto;" >\n\n              <div class="tear" (click) = "selectColor(color)" [id]="color" [style.background-color]="color" style="display:block !important;margin: 20px auto auto; padding:3px;"></div>\n\n              <div class="" style="width: 25vw !important; height:100%; display:none;" (click)="selectColor(color)" id="{{color}}splat">\n\n                <div class="tear2"  [style.background-color]="color"  style="" > <p id="{{color}}tear" style="font-size:80%;transform:rotate(-135deg);"></p>\n\n                </div>\n\n              </div>\n\n        </div>\n\n      </div>\n\n    </ion-row>\n\n    <br><br>\n\n    <ion-row >\n\n      <ion-col class = "col col-12" style="width:21%;border-bottom: 1px solid #cecece; padding-bottom: 10px;margin-bottom:40px;">yellows</ion-col>\n\n    </ion-row>\n\n    <ion-row>\n\n      <div style="width: 100%;">\n\n        <div *ngFor="let color of yellows" style="width:25%;float:left; height:90px;margin: auto;" >\n\n              <div class="tear" (click) = "selectColor(color)" [id]="color"[style.background-color]="color" style="display:block !important;margin: 20px auto auto; padding:3px;"></div>\n\n              <div class="" style="min-width: 25% !important; height:100%; display:none;" (click)="selectColor(color)" id="{{color}}splat">\n\n                <div class="tear2"  [style.background-color]="color"  style="margin:20px;margin-bottom:30px;" > <p id="{{color}}tear" style="font-size:80%;transform:rotate(-135deg);"></p>\n\n                </div>\n\n              </div>\n\n        </div>\n\n      </div>\n\n    </ion-row>\n\n    <br><br>\n\n    <ion-row >\n\n      <ion-col class = "col col-12" style="width:21%;border-bottom: 1px solid #cecece; padding-bottom: 10px;margin-bottom:40px;">greens</ion-col>\n\n    </ion-row>\n\n    <ion-row>\n\n      <div style="width: 100%;">\n\n        <div *ngFor="let color of greens" style="width:25%;float:left;height:90px; margin: auto;" >\n\n              <div class="tear" (click) = "selectColor(color)" [id]="color" [style.background-color]="color" style="display:block !important;margin: 20px auto auto;padding:3px;"></div>\n\n              <div class="" style="min-width: 25% !important;height:100%; display:none;" (click)="selectColor(color)" id="{{color}}splat">\n\n                <div class="tear2"  [style.background-color]="color"  style="margin:20px;margin-bottom:30px;" > <p id="{{color}}tear" style="font-size:80%;transform:rotate(-135deg);"></p>\n\n                </div>\n\n              </div>\n\n        </div>\n\n      </div>\n\n    </ion-row>\n\n    <br><br>\n\n    <ion-row >\n\n      <ion-col class = "col col-12" style="width:21%;border-bottom: 1px solid #cecece; padding-bottom: 10px;margin-bottom:40px;">blues</ion-col>\n\n    </ion-row>\n\n    <ion-row>\n\n      <div style="width: 100%;">\n\n        <div *ngFor="let color of blues" style="width:25%;float:left;height:90px; margin: auto;" >\n\n              <div class="tear" (click) = "selectColor(color)" [id]="color" [style.background-color]="color" style="display:block !important;margin: 20px auto auto; padding:3px;"></div>\n\n              <div class="" style="min-width: 25% !important; height:100%; display:none;" (click)="selectColor(color)" id="{{color}}splat">\n\n                <div class="tear2"  [style.background-color]="color"  style="margin:20px;margin-bottom:30px;" > <p id="{{color}}tear" style="font-size:80%;transform:rotate(-135deg);"></p>\n\n                </div>\n\n              </div>\n\n        </div>\n\n      </div>\n\n    </ion-row>\n\n    <br><br>\n\n    <ion-row >\n\n      <ion-col class = "col col-12" style="width:21%;border-bottom: 1px solid #cecece; padding-bottom: 10px;margin-bottom:40px;">purples</ion-col>\n\n    </ion-row>\n\n    <ion-row>\n\n      <div style="width: 100%;">\n\n        <div *ngFor="let color of purples" style="width:25%;float:left; height:90px;margin: auto;" >\n\n              <div class="tear" (click) = "selectColor(color)" [id]="color" [style.background-color]="color" style="display:block !important;margin: 20px auto auto; padding:3px;"></div>\n\n              <div class="" style="min-width: 25% !important; height:100%;  display:none;" (click)="selectColor(color)" id="{{color}}splat">\n\n                <div class="tear2"  [style.background-color]="color"  style="margin:20px;margin-bottom:30px;" > <p id="{{color}}tear" style="font-size:80%;transform:rotate(-135deg);"></p>\n\n                </div>\n\n              </div>\n\n        </div>\n\n      </div>\n\n    </ion-row>\n\n    <br><br>\n\n    <ion-row >\n\n      <ion-col class = "col col-12" style="width:21%;border-bottom: 1px solid #cecece; padding-bottom: 10px;margin-bottom:40px;">pinks</ion-col>\n\n    </ion-row>\n\n    <ion-row>\n\n      <div style="width: 100%;">\n\n        <div *ngFor="let color of pinks" style="width:25%;float:left;height:90px; margin: auto;" >\n\n              <div class="tear" (click) = "selectColor(color)"  [id]="color" [style.background-color]="color" style="display:block !important;margin: 20px auto auto; padding:3px;"></div>\n\n              <div class="" style="min-width: 25% !important; height:100%;  display:none;" (click)="selectColor(color)" id="{{color}}splat">\n\n                <div class="tear2"  [style.background-color]="color"  style="margin:20px;margin-bottom:30px;" > <p id="{{color}}tear" style="font-size:80%;transform:rotate(-135deg);"></p>\n\n                </div>\n\n              </div>\n\n        </div>\n\n      </div>\n\n    </ion-row>\n\n    <br><br>\n\n    <ion-row >\n\n      <ion-col class = "col col-12" style="width:21%;border-bottom: 1px solid #cecece; padding-bottom: 10px;margin-bottom:40px;">grays</ion-col>\n\n    </ion-row>\n\n    <ion-row>\n\n      <div style="width: 100%;">\n\n        <div *ngFor="let color of grays" style="width:25%;float:left;height:90px; margin: auto;" >\n\n              <div class="tear" (click) = "selectColor(color)" [id]="color" [style.background-color]="color" style="display:block !important;margin: 20px auto auto; padding:3px;"></div>\n\n              <div class="" style="min-width: 25% !important; height:100%; display:none;" (click)="selectColor(color)" id="{{color}}splat">\n\n                <div class="tear2"  [style.background-color]="color"  style="margin:20px;margin-bottom:30px;" > <p id="{{color}}tear" style="font-size:80%;transform:rotate(-135deg);"></p>\n\n                </div>\n\n              </div>\n\n        </div>\n\n      </div>\n\n    </ion-row>\n\n    <br><br>\n\n    <ion-row >\n\n      <ion-col class = "col col-12" style="width:21%;border-bottom: 1px solid #cecece; padding-bottom: 10px;margin-bottom:40px;">creams</ion-col>\n\n    </ion-row>\n\n    <ion-row>\n\n      <div style="width: 100%;">\n\n        <div *ngFor="let color of creams" style="width:25%;float:left;height:90px; margin: auto;" >\n\n              <div class="tear" (click) = "selectColor(color)" [id]="color" [style.background-color]="color" style="display:block !important;margin: 20px auto auto; padding:3px;"></div>\n\n              <div class="" style="min-width: 25% !important; height:100%; display:none;" (click)="selectColor(color)" id="{{color}}splat">\n\n                <div class="tear2"  [style.background-color]="color"  style="margin:20px;margin-bottom:30px;" > <p id="{{color}}tear" style="font-size:80%;transform:rotate(-135deg);"></p>\n\n                </div>\n\n              </div>\n\n        </div>\n\n      </div>\n\n    </ion-row>\n\n    <ion-row >\n\n      <ion-col class = "col col-12" style="width:21%;border-bottom: 1px solid #cecece; padding-bottom: 10px;margin-bottom:40px;">browns</ion-col>\n\n    </ion-row>\n\n    <ion-row>\n\n      <div style="width: 100%;">\n\n        <div *ngFor="let color of browns" style="width:25%;float:left; height:90px;margin: auto;" >\n\n              <div class="tear" (click) = "selectColor(color)" [id]="color" [style.background-color]="color" style="display:block !important;margin: 20px auto auto; padding:3px;"></div>\n\n              <div class="" style="min-width: 25% !important; height:100%; display:none;" (click)="selectColor(color)" id="{{color}}splat">\n\n                <div class="tear2"  [style.background-color]="color"  style="margin:20px;margin-bottom:30px;" > <p id="{{color}}tear" style="font-size:80%;transform:rotate(-135deg);"></p>\n\n                </div>\n\n              </div>\n\n        </div>\n\n      </div>\n\n    </ion-row>\n\n    <div style="height:7vh;"></div>\n\n    <!-- <ion-row id="hometop" style="background-color: #f7f4f4;vertical-align:top ;border-top:2px solid #c9c9c9;border-bottom:2px solid #c9c9c9;">\n\n      <ion-col col-4 (click)="navigateToHomePage()"  style=" padding:12.5px;font-size:140%;color: white;background-color: #c9c9c9;">\n\n        <img  id=chosenTheme src= "assets/imgs/custom.png">\n\n      </ion-col>\n\n      <ion-col col-4 style="padding:20px;font-size:140%;color: white;background-color: #c9c9c9;">\n\n        colors\n\n      </ion-col>\n\n      <ion-col col-4 style="padding:20px;font-size:140%;">\n\n        fonts\n\n      </ion-col>\n\n    </ion-row> -->\n\n    <ion-row id="hometop" style="position: sticky; width:100%; bottom:0px;vertical-align:top ;border-top:1px solid #d3d3d3 !important;">\n\n      <!-- <ion-col col-3></ion-col> -->\n\n\n\n      <ion-col col-4 (click)="navigateToHomePage()" style=" padding:15px;padding-top:13px;padding-bottom:13px;font-size:140%;background-color: #f7f4f4;">\n\n        <img style="height:20px;width:20px;"id=chosenTheme src= "assets/imgs/custom.png">\n\n      </ion-col>\n\n      <ion-col col-4 style="padding:15px;padding-top:17px;font-size:140%;background-color: #f7f4f4;">\n\n        colors\n\n      </ion-col>\n\n      <ion-col col-4 style="padding:15px;font-size:140%;background-color: #e8e5e5;height:100%;">\n\n        fonts\n\n      </ion-col>\n\n    </ion-row>\n\n\n\n\n\n  </ion-grid>\n\n\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\emmas\Desktop\hucomm\src\pages\custompalette\custompalette.html"*/
+            selector: 'page-custompalette',template:/*ion-inline-start:"C:\Users\emmas\Desktop\hucomm\src\pages\custompalette\custompalette.html"*/'\n\n<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">\n\n\n\n\n\n<ion-content no-padding>\n\n  <div (click)="savedThemes()" style="background-color:#d3d3d3;z-index: 6;color:white;position:fixed;left:20px;top:0px;padding:10px;">saved themes\n\n  </div>\n\n  <ion-grid class="vertical-align-content" style="padding:0px;">\n\n\n\n    <!-- <ion-row id="hometop" style="vertical-align:top ;">\n\n\n\n      <ion-col col-4 (click)="navigateToHomePage()" style="border-left:2px solid #c9c9c9;border-bottom:2px solid #c9c9c9;padding:12.5px;border-top:2px solid #c9c9c9;font-size:140%;color: white;">\n\n        <img  id=chosenTheme src= "assets/imgs/custom.png">\n\n      </ion-col>\n\n      <ion-col col-4 style="border-bottom:2px solid #c9c9c9;border-top:2px solid #c9c9c9;padding:20px;font-size:140%;color: white;background-color: #c9c9c9;">\n\n        colors\n\n      </ion-col>\n\n      <ion-col col-4 style="border-bottom:2px solid #c9c9c9;border-top:2px solid #c9c9c9;border-right:2px solid #c9c9c9;padding:20px;font-size:140%;">\n\n        fonts\n\n      </ion-col>\n\n    </ion-row> -->\n\n    <ion-row style="width:100%; text-align:center; padding-top:20px;height:15vh;margin:5px;font-style: italic;">\n\n      <ion-col col-12 style="padding:20px;font-size:140%;">\n\n        choose four colors\n\n      </ion-col>\n\n    </ion-row>\n\n    <!-- <ion-row style="position:relative;">\n\n\n\n      <ion-col col-3></ion-col>\n\n      <ion-col col-2>\n\n        <div class="circle" (click)="navigateToHomePage()" style="padding-top:11px !important;"><img  id=chosenTheme src= "assets/imgs/custom.png"></div>\n\n      </ion-col>\n\n      <ion-col col-2>\n\n        <div class="circle" style="background-color:#9c9c9c; color:white;">colors</div>\n\n      </ion-col>\n\n      <ion-col col-2>\n\n        <div class="circle">fonts</div>\n\n      </ion-col>\n\n      <ion-col col-3></ion-col>\n\n      <div  style="width:100%; height:9vh; text-align:center; padding-top: 20px; font-size:140%">choose four colors</div>\n\n    </ion-row> -->\n\n    <br>\n\n    <ion-row >\n\n      <ion-col class = "col col-12" style="width:21%;border-bottom: 1px solid #cecece; padding-bottom: 10px;margin-bottom:40px;">reds</ion-col>\n\n    </ion-row>\n\n    <ion-row>\n\n      <div style="width: 100%;">\n\n        <div *ngFor="let color of reds" style="width:25%;float:left;height:90px; margin: auto;" >\n\n              <div class="tear" (click) = "selectColor(color)" [id]="color" [style.background-color]="color" style="display:block !important;margin: 20px auto auto; padding:3px;"></div>\n\n              <div class="" style="width: 25vw !important; height:100%; display:none;" (click)="selectColor(color)" id="{{color}}splat">\n\n              </div>\n\n        </div>\n\n      </div>\n\n    </ion-row>\n\n    <br><br>\n\n    <ion-row >\n\n      <ion-col class = "col col-12" style="width:21%;border-bottom: 1px solid #cecece; padding-bottom: 10px;margin-bottom:40px;">oranges</ion-col>\n\n    </ion-row>\n\n\n\n    <ion-row>\n\n      <div style="width: 100%;">\n\n        <div *ngFor="let color of oranges; let i = index" style="height:90px;width:25%;float:left; margin: auto;" >\n\n              <div class="tear" (click) = "selectColor(color)" [id]="color" [style.background-color]="color" style="display:block !important;margin: 20px auto auto; padding:3px;"></div>\n\n              <div class="" style="width: 25vw !important; height:100%; display:none;" (click)="selectColor(color)" id="{{color}}splat">\n\n                <div class="tear2"  [style.background-color]="color"  style="" > <p id="{{color}}tear" style="font-size:80%;transform:rotate(-135deg);"></p>\n\n                </div>\n\n              </div>\n\n        </div>\n\n      </div>\n\n    </ion-row>\n\n    <br><br>\n\n    <ion-row >\n\n      <ion-col class = "col col-12" style="width:21%;border-bottom: 1px solid #cecece; padding-bottom: 10px;margin-bottom:40px;">yellows</ion-col>\n\n    </ion-row>\n\n    <ion-row>\n\n      <div style="width: 100%;">\n\n        <div *ngFor="let color of yellows" style="width:25%;float:left; height:90px;margin: auto;" >\n\n              <div class="tear" (click) = "selectColor(color)" [id]="color"[style.background-color]="color" style="display:block !important;margin: 20px auto auto; padding:3px;"></div>\n\n              <div class="" style="min-width: 25% !important; height:100%; display:none;" (click)="selectColor(color)" id="{{color}}splat">\n\n                <div class="tear2"  [style.background-color]="color"  style="margin:20px;margin-bottom:30px;" > <p id="{{color}}tear" style="font-size:80%;transform:rotate(-135deg);"></p>\n\n                </div>\n\n              </div>\n\n        </div>\n\n      </div>\n\n    </ion-row>\n\n    <br><br>\n\n    <ion-row >\n\n      <ion-col class = "col col-12" style="width:21%;border-bottom: 1px solid #cecece; padding-bottom: 10px;margin-bottom:40px;">greens</ion-col>\n\n    </ion-row>\n\n    <ion-row>\n\n      <div style="width: 100%;">\n\n        <div *ngFor="let color of greens" style="width:25%;float:left;height:90px; margin: auto;" >\n\n              <div class="tear" (click) = "selectColor(color)" [id]="color" [style.background-color]="color" style="display:block !important;margin: 20px auto auto;padding:3px;"></div>\n\n              <div class="" style="min-width: 25% !important;height:100%; display:none;" (click)="selectColor(color)" id="{{color}}splat">\n\n                <div class="tear2"  [style.background-color]="color"  style="margin:20px;margin-bottom:30px;" > <p id="{{color}}tear" style="font-size:80%;transform:rotate(-135deg);"></p>\n\n                </div>\n\n              </div>\n\n        </div>\n\n      </div>\n\n    </ion-row>\n\n    <br><br>\n\n    <ion-row >\n\n      <ion-col class = "col col-12" style="width:21%;border-bottom: 1px solid #cecece; padding-bottom: 10px;margin-bottom:40px;">blues</ion-col>\n\n    </ion-row>\n\n    <ion-row>\n\n      <div style="width: 100%;">\n\n        <div *ngFor="let color of blues" style="width:25%;float:left;height:90px; margin: auto;" >\n\n              <div class="tear" (click) = "selectColor(color)" [id]="color" [style.background-color]="color" style="display:block !important;margin: 20px auto auto; padding:3px;"></div>\n\n              <div class="" style="min-width: 25% !important; height:100%; display:none;" (click)="selectColor(color)" id="{{color}}splat">\n\n                <div class="tear2"  [style.background-color]="color"  style="margin:20px;margin-bottom:30px;" > <p id="{{color}}tear" style="font-size:80%;transform:rotate(-135deg);"></p>\n\n                </div>\n\n              </div>\n\n        </div>\n\n      </div>\n\n    </ion-row>\n\n    <br><br>\n\n    <ion-row >\n\n      <ion-col class = "col col-12" style="width:21%;border-bottom: 1px solid #cecece; padding-bottom: 10px;margin-bottom:40px;">purples</ion-col>\n\n    </ion-row>\n\n    <ion-row>\n\n      <div style="width: 100%;">\n\n        <div *ngFor="let color of purples" style="width:25%;float:left; height:90px;margin: auto;" >\n\n              <div class="tear" (click) = "selectColor(color)" [id]="color" [style.background-color]="color" style="display:block !important;margin: 20px auto auto; padding:3px;"></div>\n\n              <div class="" style="min-width: 25% !important; height:100%;  display:none;" (click)="selectColor(color)" id="{{color}}splat">\n\n                <div class="tear2"  [style.background-color]="color"  style="margin:20px;margin-bottom:30px;" > <p id="{{color}}tear" style="font-size:80%;transform:rotate(-135deg);"></p>\n\n                </div>\n\n              </div>\n\n        </div>\n\n      </div>\n\n    </ion-row>\n\n    <br><br>\n\n    <ion-row >\n\n      <ion-col class = "col col-12" style="width:21%;border-bottom: 1px solid #cecece; padding-bottom: 10px;margin-bottom:40px;">pinks</ion-col>\n\n    </ion-row>\n\n    <ion-row>\n\n      <div style="width: 100%;">\n\n        <div *ngFor="let color of pinks" style="width:25%;float:left;height:90px; margin: auto;" >\n\n              <div class="tear" (click) = "selectColor(color)"  [id]="color" [style.background-color]="color" style="display:block !important;margin: 20px auto auto; padding:3px;"></div>\n\n              <div class="" style="min-width: 25% !important; height:100%;  display:none;" (click)="selectColor(color)" id="{{color}}splat">\n\n                <div class="tear2"  [style.background-color]="color"  style="margin:20px;margin-bottom:30px;" > <p id="{{color}}tear" style="font-size:80%;transform:rotate(-135deg);"></p>\n\n                </div>\n\n              </div>\n\n        </div>\n\n      </div>\n\n    </ion-row>\n\n    <br><br>\n\n    <ion-row >\n\n      <ion-col class = "col col-12" style="width:21%;border-bottom: 1px solid #cecece; padding-bottom: 10px;margin-bottom:40px;">grays</ion-col>\n\n    </ion-row>\n\n    <ion-row>\n\n      <div style="width: 100%;">\n\n        <div *ngFor="let color of grays" style="width:25%;float:left;height:90px; margin: auto;" >\n\n              <div class="tear" (click) = "selectColor(color)" [id]="color" [style.background-color]="color" style="display:block !important;margin: 20px auto auto; padding:3px;"></div>\n\n              <div class="" style="min-width: 25% !important; height:100%; display:none;" (click)="selectColor(color)" id="{{color}}splat">\n\n                <div class="tear2"  [style.background-color]="color"  style="margin:20px;margin-bottom:30px;" > <p id="{{color}}tear" style="font-size:80%;transform:rotate(-135deg);"></p>\n\n                </div>\n\n              </div>\n\n        </div>\n\n      </div>\n\n    </ion-row>\n\n    <br><br>\n\n    <ion-row >\n\n      <ion-col class = "col col-12" style="width:21%;border-bottom: 1px solid #cecece; padding-bottom: 10px;margin-bottom:40px;">creams</ion-col>\n\n    </ion-row>\n\n    <ion-row>\n\n      <div style="width: 100%;">\n\n        <div *ngFor="let color of creams" style="width:25%;float:left;height:90px; margin: auto;" >\n\n              <div class="tear" (click) = "selectColor(color)" [id]="color" [style.background-color]="color" style="display:block !important;margin: 20px auto auto; padding:3px;"></div>\n\n              <div class="" style="min-width: 25% !important; height:100%; display:none;" (click)="selectColor(color)" id="{{color}}splat">\n\n                <div class="tear2"  [style.background-color]="color"  style="margin:20px;margin-bottom:30px;" > <p id="{{color}}tear" style="font-size:80%;transform:rotate(-135deg);"></p>\n\n                </div>\n\n              </div>\n\n        </div>\n\n      </div>\n\n    </ion-row>\n\n    <ion-row >\n\n      <ion-col class = "col col-12" style="width:21%;border-bottom: 1px solid #cecece; padding-bottom: 10px;margin-bottom:40px;">browns</ion-col>\n\n    </ion-row>\n\n    <ion-row>\n\n      <div style="width: 100%;">\n\n        <div *ngFor="let color of browns" style="width:25%;float:left; height:90px;margin: auto;" >\n\n              <div class="tear" (click) = "selectColor(color)" [id]="color" [style.background-color]="color" style="display:block !important;margin: 20px auto auto; padding:3px;"></div>\n\n              <div class="" style="min-width: 25% !important; height:100%; display:none;" (click)="selectColor(color)" id="{{color}}splat">\n\n                <div class="tear2"  [style.background-color]="color"  style="margin:20px;margin-bottom:30px;" > <p id="{{color}}tear" style="font-size:80%;transform:rotate(-135deg);"></p>\n\n                </div>\n\n              </div>\n\n        </div>\n\n      </div>\n\n    </ion-row>\n\n    <div style="height:7vh;"></div>\n\n    <!-- <ion-row id="hometop" style="background-color: #f7f4f4;vertical-align:top ;border-top:2px solid #c9c9c9;border-bottom:2px solid #c9c9c9;">\n\n      <ion-col col-4 (click)="navigateToHomePage()"  style=" padding:12.5px;font-size:140%;color: white;background-color: #c9c9c9;">\n\n        <img  id=chosenTheme src= "assets/imgs/custom.png">\n\n      </ion-col>\n\n      <ion-col col-4 style="padding:20px;font-size:140%;color: white;background-color: #c9c9c9;">\n\n        colors\n\n      </ion-col>\n\n      <ion-col col-4 style="padding:20px;font-size:140%;">\n\n        fonts\n\n      </ion-col>\n\n    </ion-row> -->\n\n    <ion-row id="hometop" style="position: sticky; width:100%; bottom:0px;vertical-align:top ;border-top:1px solid #d3d3d3 !important;">\n\n      <!-- <ion-col col-3></ion-col> -->\n\n\n\n      <ion-col col-4 (click)="navigateToHomePage()" style=" padding:15px;padding-top:13px;padding-bottom:13px;font-size:140%;background-color: #f7f4f4;">\n\n        <img style="height:20px;width:20px;"id=chosenTheme src= "assets/imgs/custom.png">\n\n      </ion-col>\n\n      <ion-col col-4 style="padding:15px;padding-top:17px;font-size:140%;background-color: #f7f4f4;">\n\n        colors\n\n      </ion-col>\n\n      <ion-col col-4 style="padding:15px;font-size:140%;background-color: #e8e5e5;height:100%;">\n\n        fonts\n\n      </ion-col>\n\n    </ion-row>\n\n\n\n\n\n  </ion-grid>\n\n\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\emmas\Desktop\hucomm\src\pages\custompalette\custompalette.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavParams */]])
     ], CustomPalettePage);
@@ -392,7 +248,7 @@ var CustomPalettePage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 114:
+/***/ 113:
 /***/ (function(module, exports) {
 
 function webpackEmptyAsyncContext(req) {
@@ -405,11 +261,11 @@ function webpackEmptyAsyncContext(req) {
 webpackEmptyAsyncContext.keys = function() { return []; };
 webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
 module.exports = webpackEmptyAsyncContext;
-webpackEmptyAsyncContext.id = 114;
+webpackEmptyAsyncContext.id = 113;
 
 /***/ }),
 
-/***/ 155:
+/***/ 154:
 /***/ (function(module, exports) {
 
 function webpackEmptyAsyncContext(req) {
@@ -422,7 +278,151 @@ function webpackEmptyAsyncContext(req) {
 webpackEmptyAsyncContext.keys = function() { return []; };
 webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
 module.exports = webpackEmptyAsyncContext;
-webpackEmptyAsyncContext.id = 155;
+webpackEmptyAsyncContext.id = 154;
+
+/***/ }),
+
+/***/ 197:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomePage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__palette_palette__ = __webpack_require__(198);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__custompalette_custompalette__ = __webpack_require__(104);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__saved_saved__ = __webpack_require__(40);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+var HomePage = /** @class */ (function () {
+    function HomePage(navCtrl) {
+        this.navCtrl = navCtrl;
+    }
+    HomePage.prototype.savedThemes = function () {
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_4__saved_saved__["a" /* SavedPage */], {
+            dummy2: "dummy2"
+        });
+    };
+    HomePage.prototype.customThemeChosen = function () {
+        var blues = ["#5d667b", "#45547b", "#5765b0", "#39457b", "#236c75", "#34a0ae", "#040f7b", "#6dbdc9", "#7ab2b9", "#678997", "#80a9b0", "#6683d0", "#82bdd3", "#33377b", "#61808f", "#64c8c6", "#121f7b", "#a4afe3", "#477aed", "#7baefb", "#5a717b", "#2360bf", "#6f9df8", "#aacaf4", "#6f7fbe", "#60b5c1", "#4d687b", "#7698b8", "#2badb8", "#1f40b8"];
+        var browns = ["#968663", "#7b6156", "#7b6972", "#7b6e58", "#7b6a72", "#baa994", "#594446", "#bca67f", "#67697b", "#7b4600", "#7b625e", "#7b403b", "#7b5a43", "#7b4424", "#b7866d", "#7b615b", "#7b5650"];
+        var greens = ["#617b66", "#848b8c", "#727b63", "#6c7b4c", "#c5be8b", "#848b8c", "#8cae87", "#7acdad", "#d5ef9a", "#afc185", "#5c7b69", "#6c818f", "#74ab86", "#2e717b", "#589a1f", "#157b5c", "#617b62", "#787b39", "#acd247", "#83d780", "#68ad74", "#cae67c", "#caeff4", "#61c277", "#499259", "#647a7b", "#b8b14e", "#77b800"];
+        var yellows = ["#d3af86", "#e3a83e", "#b79533", "#fdcb73", "#c29a50", "#d9a42e", "#f8e997", "#bfb06b", "#d6a149", "#ffb822", "#ffbd4a", "#feba08", "#dbff6b"];
+        var creams = ["#e3d6cc", "#c9beb5", "#e3d6cc", "#cdb98f", "#e1d9d3"];
+        var purples = ["#918696", "#9a82ae", "#524c7b", "#a275a5", "#b958c0", "#3e427d", "#57017b", "#584e9a", "#7a3a7b", "#6f467b", "#4b407b", "#7b1877", "#b760e6", "#dfd1ef", "#5546b8", "#9e38b8", "#575db8", "#cb07bd"];
+        var oranges = ["#bf834e", "#8e6350", "#eb7244", "#e98441", "#cd745f", "#ee9547", "#d3725b", "#cd7746", "#eb8119", "#ab6141", "#ba6a00", "#e8926e", "#ffab37"];
+        var reds = ["#c94300", "#7b1416", "#d7000b", "#8c412a", "#e76753", "#ea4627", "#b80716"];
+        var pinks = ["#7b536e", "#d9b1b0", "#f3bbaa", "#a16c6a", "#745a7b", "#e76753", "#e8926e", "#7b3446", "#ff9aac", "#ef447a", "#cdaad2", "#b83e81"];
+        var grays = ["#c5bde1", "#a8a8a8", "#78787b"];
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_3__custompalette_custompalette__["a" /* CustomPalettePage */], {
+            'blues': blues,
+            'browns': browns,
+            'greens': greens,
+            'yellows': yellows,
+            'creams': creams,
+            'purples': purples,
+            'oranges': oranges,
+            'reds': reds,
+            'pinks': pinks,
+            'grays': grays
+        });
+    };
+    HomePage.prototype.navigateToPalettePage = function (theme) {
+        var palette1;
+        var palette2;
+        var palette3;
+        var palette4;
+        //based on what theme is = pass in palettes
+        if (theme.includes("natural")) {
+            palette1 = ["#baa994", "#968663", "#5d667b", "#617b66"];
+            palette2 = ["#7b6156", "#e3d6cc", "#848b8c", "#c9beb5"];
+            palette3 = ["#918696", "#7b6972", "#727b63", "#d3af86"];
+            palette4 = ["#617b66", "#c9beb5", "#d3af86", "#7b6e58"];
+        }
+        if (theme.includes("summer")) {
+            palette1 = ["#60d1d3", "#477aed", "#ef447a", "#cae67c"];
+            palette2 = ["#acd247", "#e76753", "#e8926e", "#f8e997"];
+            palette3 = ["#b760e6", "#68ad74", "#6f9df8", "#cae67c"];
+            palette4 = ["#ef447a", "#ffab37", "#6f9df8", "#cae67c"];
+        }
+        if (theme.includes("fall")) {
+            palette1 = ["#4b407b", "#5a717b", "#787b39", "#7b4424"];
+            palette2 = ["#7b5a43", "#787b39", "#8c412a", "#ba6a00"];
+            palette3 = ["#787b39", "#7b4424", "#d9a42e", "#cdb98f"];
+            palette4 = ["#7b615b", "#7b4600", "#ba6a00", "#cdb98f"];
+        }
+        if (theme.includes("tech")) {
+            palette1 = ["#263c75", "#34a0ae", "#7acdad", "#a8a8a8"];
+            palette2 = ["#040f7b", "#eb7244", "#6dbdc9", "#b958c0"];
+            palette3 = ["#7ab2b9", "#d5ef9a", "#fdcb73", "#e98441"];
+            palette4 = ["#678997", "#a275a5", "#cd745f", "#f3bbaa"];
+        }
+        if (theme.includes("warm")) {
+            palette1 = ["#d9a42e", "#e76753", "#ba6a00", "#7b4600"];
+            palette2 = ["#e8926e", "#7b625e", "#bf834e", "#eb8119"];
+            palette3 = ["#f8e997", "#bfb06b", "#d6a149", "#7b403b"];
+            palette4 = ["#c94300", "#7b1416", "#d7000b", "#ffb822"];
+        }
+        if (theme.includes("sophisticated")) {
+            palette1 = ["#ee9547", "#d3725b", "#6683d0", "#82bdd3"];
+            palette2 = ["#afc185", "#80a9b0", "#3e427d", "#baa994"];
+            palette3 = ["#cd7746", "#594446", "#bca67f", "#a16c6a"];
+            palette4 = ["#c29a50", "#e3d6cc", "#33377b", "#61808f"];
+        }
+        if (theme.includes("wellbeing")) {
+            palette1 = ["#caeff4", "#aacaf4", "#cdaad2", "#dfd1ef"];
+            palette2 = ["#caeff4", "#6f7fbe", "#ee9547", "#647a7b"];
+            palette3 = ["#dfd1ef", "#60b5c1", "#4d687b", "#647a7b"];
+            palette4 = ["#ffbd4a", "#acd247", "#ee9547", "#4d687b"];
+        }
+        if (theme.includes("bold")) {
+            palette1 = ["#ee9547", "#5546b8", "#b83e81", "#4aae4e"];
+            palette2 = ["#ee9547", "#5546b8", "#9e38b8", "#7698b8"];
+            palette3 = ["#2badb8", "#ea4627", "#b80716", "#575db8"];
+            palette4 = ["#7698b8", "#dbff6b", "#575db8", "#cb07bd"];
+        }
+        if (theme.includes("cool")) {
+            palette1 = ["#64c8c6", "#5c7b69", "#6c818f", "#74ab86"];
+            palette2 = ["#121g7b", "#a4afe3", "#745a7b", "#2e717b"];
+            palette3 = ["#a4afe3", "#57017b", "#584e9a", "#2e717b"];
+            palette4 = ["#74ab86", "#2e717b", "#584e9a", "#7baefb"];
+        }
+        if (theme.includes("rustic")) {
+            palette1 = ["#bf834e", "#7b536e", "#55707b", "#6c7b4c"];
+            palette2 = ["#c5bde1", "#c5be8b", "#5765b0", "#c9beb5"];
+            palette3 = ["#7b536e", "#c5be8b", "#848b8c", "#8e6350"];
+            palette4 = ["#d9b1b0", "#848b8c", "#5765b0", "#6c7b4c"];
+        }
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__palette_palette__["a" /* PalettePage */], {
+            'data': theme,
+            'palette1': palette1,
+            'palette2': palette2,
+            'palette3': palette3,
+            'palette4': palette4
+        });
+    };
+    HomePage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-home',template:/*ion-inline-start:"C:\Users\emmas\Desktop\hucomm\src\pages\home\home.html"*/'<!--\n\n<ion-header>\n\n\n\n</ion-header> -->\n\n\n\n<ion-content no-padding>\n\n  <div (click)="savedThemes()" style="background-color:#d3d3d3;z-index: 6;color:white;position:fixed;left:20px;top:0px;padding:10px;">saved themes\n\n  </div>\n\n  <ion-grid class="vertical-align-content" style="padding:0px;">\n\n\n\n\n\n    <ion-row style="width:100%; text-align:center; padding-top:20px;height:15vh;margin:5px;font-style: italic;">\n\n      <ion-col col-12 style="padding:20px;font-size:140%;">\n\n        choose a category\n\n      </ion-col>\n\n    </ion-row>\n\n        <!-- <ion-col col-3></ion-col> -->\n\n\n\n    <ion-row class="align-bottom" style="margin-bottom:5px;">\n\n      <ion-col col-4  (click)="navigateToPalettePage(\'assets/imgs/natural.png\')"><img  src="assets/imgs/natural.png"></ion-col>\n\n      <ion-col col-4 (click)="navigateToPalettePage(\'assets/imgs/summer.png\')"><img  src="assets/imgs/summer.png"></ion-col>\n\n      <ion-col col-4 (click)="navigateToPalettePage(\'assets/imgs/fall.png\')"><img  src="assets/imgs/fall.png"></ion-col>\n\n    </ion-row>\n\n    <ion-row style="height:5vh; margin-bottom:15px;">\n\n      <ion-col col-4 (click)="navigateToPalettePage(\'assets/imgs/natural.png\')">natural<br><br></ion-col>\n\n      <ion-col col-4 (click)="navigateToPalettePage(\'assets/imgs/summer.png\')">summer<br><br></ion-col>\n\n      <ion-col col-4 (click)="navigateToPalettePage(\'assets/imgs/fall.png\')">fall<br><br></ion-col>\n\n    </ion-row>\n\n    <ion-row class="align-bottom" style="margin-bottom:5px;">\n\n      <ion-col col-4 (click)="navigateToPalettePage(\'assets/imgs/tech.png\')"><img  src="assets/imgs/tech.png"></ion-col>\n\n      <ion-col col-4 (click)="navigateToPalettePage(\'assets/imgs/warm.png\')"><img  src="assets/imgs/warm.png"></ion-col>\n\n      <ion-col col-4 (click)="navigateToPalettePage(\'assets/imgs/sophisticated.png\')"><img  src="assets/imgs/sophisticated.png"></ion-col>\n\n    </ion-row>\n\n    <ion-row style="height:5vh; margin-bottom:15px;">\n\n      <ion-col col-4 (click)="navigateToPalettePage(\'assets/imgs/tech.png\')">tech<br><br></ion-col>\n\n      <ion-col col-4 (click)="navigateToPalettePage(\'assets/imgs/warm.png\')">warm<br><br></ion-col>\n\n      <ion-col col-4 (click)="navigateToPalettePage(\'assets/imgs/sophisticated.png\')">sophisticated<br><br></ion-col>\n\n    </ion-row>\n\n    <ion-row class="align-bottom" style="margin-bottom:5px;">\n\n      <ion-col col-4 (click)="navigateToPalettePage(\'assets/imgs/wellbeing.png\')"><img src="assets/imgs/wellbeing.png"></ion-col>\n\n      <ion-col col-4 (click)="navigateToPalettePage(\'assets/imgs/bold.png\')"><img  src="assets/imgs/bold.png"></ion-col>\n\n      <ion-col col-4 (click)="navigateToPalettePage(\'assets/imgs/cool.png\')"><img  src="assets/imgs/cool.png"></ion-col>\n\n    </ion-row>\n\n    <ion-row style="height:5vh; margin-bottom:15px;">\n\n      <ion-col col-4 (click)="navigateToPalettePage(\'assets/imgs/wellbeing.png\')">wellbeing<br><br></ion-col>\n\n      <ion-col col-4 (click)="navigateToPalettePage(\'assets/imgs/bold.png\')">bold<br><br></ion-col>\n\n      <ion-col col-4 (click)="navigateToPalettePage(\'assets/imgs/cool.png\')">cool<br><br></ion-col>\n\n    </ion-row>\n\n    <ion-row class="align-bottom" style="margin-bottom:5px;">\n\n      <ion-col col-4 (click)="navigateToPalettePage(\'assets/imgs/rustic.png\')"><img src="assets/imgs/rustic.png"></ion-col>\n\n      <ion-col col-4 ><img  src="assets/imgs/random.png"></ion-col>\n\n      <ion-col col-4 (click) = "customThemeChosen()"><img  src="assets/imgs/custom.png"></ion-col>\n\n    </ion-row>\n\n    <ion-row style="height:5vh; margin-bottom:15px;">\n\n      <ion-col col-4 (click)="navigateToPalettePage(\'assets/imgs/rustic.png\')">rustic<br><br></ion-col>\n\n      <ion-col col-4>random<br><br></ion-col>\n\n      <ion-col col-4 (click) = "customThemeChosen()">custom<br><br></ion-col>\n\n    </ion-row>\n\n    <hr>\n\n    <ion-row id="hometop" style="position: fixed; width:100%; bottom:0px;border-top:1px solid #cecece;vertical-align:top ;">\n\n      <!-- <ion-col col-3></ion-col> -->\n\n\n\n      <ion-col col-4 style=" padding:15px;font-size:140%;background-color:#f7f4f4;height:100%;">\n\n        category\n\n      </ion-col>\n\n      <ion-col col-4 style="padding:15px;font-size:140%;background-color: #e8e5e5;height:100%;">\n\n        colors\n\n      </ion-col>\n\n      <ion-col col-4 style="padding:15px;font-size:140%;background-color: #e8e5e5;height:100%;">\n\n        fonts\n\n      </ion-col>\n\n    </ion-row>\n\n  </ion-grid>\n\n\n\n</ion-content>\n\n<!-- =======\n\n<ion-header>\n\n\n\n</ion-header>\n\n\n\n<ion-content no-padding>\n\n  <ion-grid class="vertical-align-content">\n\n\n\n    <ion-row id="hometop">\n\n\n\n\n\n      <ion-col col-3></ion-col>\n\n      <ion-col col-2>\n\n        <div class="circle" style="background-color:#9c9c9c; color:white;">theme</div>\n\n      </ion-col>\n\n      <ion-col col-2>\n\n        <div class="circle">colors</div>\n\n      </ion-col>\n\n      <ion-col col-2>\n\n        <div class="circle">fonts</div>\n\n      </ion-col>\n\n      <ion-col col-3></ion-col>\n\n      <div  style="width:100%; height:10vw; text-align:center; padding-top: 20px; font-size:140%">choose a theme</div>\n\n    </ion-row>\n\n    <ion-row class="align-bottom" style="margin-bottom:5px;">\n\n      <ion-col col-4  (click)="navigateToPalettePage(\'assets/imgs/natural.png\')"><img  src="assets/imgs/natural.png"></ion-col>\n\n      <ion-col col-4 (click)="navigateToPalettePage(\'assets/imgs/summer.png\')"><img  src="assets/imgs/summer.png"></ion-col>\n\n      <ion-col col-4 (click)="navigateToPalettePage(\'assets/imgs/fall.png\')"><img  src="assets/imgs/fall.png"></ion-col>\n\n    </ion-row>\n\n    <ion-row style="height:5vh; margin-bottom:15px;">\n\n      <ion-col col-4 (click)="navigateToPalettePage(\'assets/imgs/natural.png\')">natural<br><br></ion-col>\n\n      <ion-col col-4 (click)="navigateToPalettePage(\'assets/imgs/summer.png\')">summer<br><br></ion-col>\n\n      <ion-col col-4 (click)="navigateToPalettePage(\'assets/imgs/fall.png\')">fall<br><br></ion-col>\n\n    </ion-row>\n\n    <ion-row class="align-bottom" style="margin-bottom:5px;">\n\n      <ion-col col-4 (click)="navigateToPalettePage(\'assets/imgs/tech.png\')"><img  src="assets/imgs/tech.png"></ion-col>\n\n      <ion-col col-4 (click)="navigateToPalettePage(\'assets/imgs/warm.png\')"><img  src="assets/imgs/warm.png"></ion-col>\n\n      <ion-col col-4 (click)="navigateToPalettePage(\'assets/imgs/sophisticated.png\')"><img  src="assets/imgs/sophisticated.png"></ion-col>\n\n    </ion-row>\n\n    <ion-row style="height:5vh; margin-bottom:15px;">\n\n      <ion-col col-4 (click)="navigateToPalettePage(\'assets/imgs/tech.png\')">tech<br><br></ion-col>\n\n      <ion-col col-4 (click)="navigateToPalettePage(\'assets/imgs/warm.png\')">warm<br><br></ion-col>\n\n      <ion-col col-4 (click)="navigateToPalettePage(\'assets/imgs/sophisticated.png\')">sophisticated<br><br></ion-col>\n\n    </ion-row>\n\n    <ion-row class="align-bottom" style="margin-bottom:5px;">\n\n      <ion-col col-4 (click)="navigateToPalettePage(\'assets/imgs/wellbeing.png\')"><img src="assets/imgs/wellbeing.png"></ion-col>\n\n      <ion-col col-4 (click)="navigateToPalettePage(\'assets/imgs/bold.png\')"><img  src="assets/imgs/bold.png"></ion-col>\n\n      <ion-col col-4 (click)="navigateToPalettePage(\'assets/imgs/cool.png\')"><img  src="assets/imgs/cool.png"></ion-col>\n\n    </ion-row>\n\n    <ion-row style="height:5vh; margin-bottom:15px;">\n\n      <ion-col col-4 (click)="navigateToPalettePage(\'assets/imgs/wellbeing.png\')">wellbeing<br><br></ion-col>\n\n      <ion-col col-4 (click)="navigateToPalettePage(\'assets/imgs/bold.png\')">bold<br><br></ion-col>\n\n      <ion-col col-4 (click)="navigateToPalettePage(\'assets/imgs/cool.png\')">cool<br><br></ion-col>\n\n    </ion-row>\n\n    <ion-row class="align-bottom" style="margin-bottom:5px;">\n\n      <ion-col col-4 (click)="navigateToPalettePage(\'assets/imgs/rustic.png\')"><img src="assets/imgs/rustic.png"></ion-col>\n\n      <ion-col col-4 ><img  src="assets/imgs/random.png"></ion-col>\n\n      <ion-col col-4 (click) = "customThemeChosen()"><img  src="assets/imgs/custom.png"></ion-col>\n\n    </ion-row>\n\n    <ion-row style="height:5vh; margin-bottom:15px;">\n\n      <ion-col col-4 (click)="navigateToPalettePage(\'assets/imgs/rustic.png\')">rustic<br><br></ion-col>\n\n      <ion-col col-4>random<br><br></ion-col>\n\n      <ion-col col-4 (click) = "customThemeChosen()">custom<br><br></ion-col>\n\n    </ion-row>\n\n  </ion-grid>\n\n\n\n</ion-content>\n\n>>>>>>> ae28ee429d8b33d1a53fc6b6265df2434a56a54d -->\n\n'/*ion-inline-end:"C:\Users\emmas\Desktop\hucomm\src\pages\home\home.html"*/
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */]])
+    ], HomePage);
+    return HomePage;
+}());
+
+//# sourceMappingURL=home.js.map
 
 /***/ }),
 
@@ -546,11 +546,10 @@ var FontPage = /** @class */ (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EmailPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__custompalette_custompalette__ = __webpack_require__(105);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__custompalette_custompalette__ = __webpack_require__(104);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_email_composer__ = __webpack_require__(102);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__home_home__ = __webpack_require__(103);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__saved_saved__ = __webpack_require__(40);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__providers_save_theme_save_theme__ = __webpack_require__(104);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__saved_saved__ = __webpack_require__(40);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_save_theme_save_theme__ = __webpack_require__(103);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -560,7 +559,6 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-
 
 
 
@@ -592,16 +590,17 @@ var EmailPage = /** @class */ (function () {
         this.navCtrl.pop();
     };
     EmailPage.prototype.savedThemes = function () {
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_5__saved_saved__["a" /* SavedPage */], {
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_4__saved_saved__["a" /* SavedPage */], {
             dummy: "dummy",
             dummy2: "dummy2"
         });
     };
     EmailPage.prototype.startNewTheme = function () {
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_4__home_home__["a" /* HomePage */], {
-            dummy: "dummy",
-            dummy2: "dummy2"
-        });
+        // this.navCtrl.push(HomePage, {
+        //   dummy:"dummy",
+        //   dummy2:"dummy2"
+        // });
+        this.navCtrl.popToRoot();
     };
     EmailPage.prototype.triggerSaveTheme = function () {
         var element = document.getElementById("saveThemeCard");
@@ -670,7 +669,7 @@ var EmailPage = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-email',template:/*ion-inline-start:"C:\Users\emmas\Desktop\hucomm\src\pages\email\email.html"*/'\n\n<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">\n\n\n\n\n\n<script>\n\nvar emailDoc = version.document || version.contentDocument;\n\n// ...and then\n\ncurrentEmail = versionDoc.getElementById("selectedEmail").value;\n\n</script>\n\n\n\n<ion-content no-padding>\n\n  <div (click)="savedThemes()" style="background-color:#d3d3d3;color:white;z-index: 6;position:fixed;left:20px;top:0px;padding:10px;">saved themes\n\n  </div>\n\n  <ion-grid class="vertical-align-content" style="padding:0px;">\n\n    <!-- <ion-row style="position:relative;">\n\n\n\n      <ion-col col-3></ion-col>\n\n      <ion-col col-2>\n\n        <div class="circle" (click)="navigateToHomePage()" style="background-color:#9c9c9c; color:white;">theme</div>\n\n      </ion-col>\n\n      <ion-col col-2>\n\n        <div class="circle" (click)="navigateToPalletePage()" style="background-color:#9c9c9c; color:white;">colors</div>\n\n      </ion-col>\n\n      <ion-col col-2>\n\n        <div class="circle" style="background-color:#9c9c9c; color:white;">fonts</div>\n\n      </ion-col>\n\n      <ion-col col-3></ion-col>\n\n      <div  style="width:100%; height:9vh; text-align:center; padding-top: 20px; font-size:140%">your selections</div>\n\n    </ion-row> -->\n\n    <ion-row style="width:100%; text-align:center; padding-top:20px;height:15vh;margin:5px;font-style: italic;">\n\n      <ion-col col-12 style="padding:20px;font-size:140%;">\n\n        your selected theme\n\n      </ion-col>\n\n    </ion-row>\n\n    <ion-row >\n\n      <ion-col class = "col col-12" style="width:21%;border-bottom: 1px solid #cecece; padding-bottom: 10px;margin-bottom:15px;">colors</ion-col>\n\n    </ion-row>\n\n    <ion-row>\n\n      <ion-col class="col col-3">\n\n        <div class="tear" [style.background-color]="color1" style="display:inline-block !important;"></div>\n\n      </ion-col>\n\n      <ion-col class="col col-3">\n\n        <div class="tear" [style.background-color]="color2" style="display:inline-block !important;"></div>\n\n      </ion-col>\n\n      <ion-col class="col col-3">\n\n        <div class="tear" [style.background-color]="color3" style="display:inline-block !important;"></div>\n\n      </ion-col>\n\n      <ion-col class="col col-3">\n\n        <div class="tear" [style.background-color]="color4" style="display:inline-block !important;"></div>\n\n      </ion-col>\n\n    </ion-row><br>\n\n    <ion-row>\n\n      <ion-col class="col col-3">{{color1}}</ion-col>\n\n      <ion-col class="col col-3">{{color2}}</ion-col>\n\n      <ion-col class="col col-3">{{color3}}</ion-col>\n\n      <ion-col class="col col-3">{{color4}}</ion-col>\n\n    </ion-row>\n\n    <!-- <ion-row>\n\n      <ion-col class = "col col-6">\n\n          <div class="tear summary" [id]="color1" [style.background-color]="color1" style="display:inline-block !important;margin:10px;"></div>\n\n          <br>{{color1}}\n\n      </ion-col>\n\n      <ion-col class = "col col-6">\n\n          <div class="tear summary" [id]="color2" [style.background-color]="color2" style="display:inline-block !important;margin:10px;"></div>\n\n            <br>{{color2}}\n\n      </ion-col>\n\n    </ion-row>\n\n    <ion-row>\n\n      <ion-col class = "col col-6">\n\n          <div class="tear summary" [id]="color3" [style.background-color]="color3" style="display:inline-block !important;margin:10px;"></div>\n\n            <br>{{color3}}\n\n      </ion-col>\n\n      <ion-col class = "col col-6">\n\n          <div class="tear summary" [id]="color4" [style.background-color]="color4" style="display:inline-block !important;margin:10px;"></div>\n\n            <br>{{color4}}\n\n      </ion-col>\n\n    </ion-row> -->\n\n    <br><br>\n\n    <ion-row >\n\n      <ion-col class = "col col-12" style="width:21%;border-bottom: 1px solid #cecece; padding-bottom: 10px;margin-bottom:10px;">fonts</ion-col>\n\n    </ion-row>\n\n    <ion-row>\n\n      <ion-col class="col col-12" style="text-align:center;"><h1>font 1</h1></ion-col>\n\n    </ion-row>\n\n    <ion-row>\n\n      <ion-col class="col col-12" style="text-align:center;"><h2>font 2</h2></ion-col>\n\n    </ion-row>\n\n    <br><br>\n\n\n\n    <button  (click)="sendEmail()" style= "font-size: 140%;width: 100%; height: 6vh; background-color: #cecece; color: white; text-align:center; padding-left:32%;">email the css code</button>\n\n    <button   (click)="triggerSaveTheme()" style= "width: 100%; font-size: 140%;height: 6vh; background-color: #b7b7b7; color: white;padding-left:32%;">save your theme</button>\n\n    <div id=saveThemeCard style="display:none !important;padding:30px;">\n\n      <ion-item id=themeNameInput style="margin-right:5px;">\n\n        <!-- <ion-label floating>Name your theme ...</ion-label> -->\n\n        <ion-input id=inputofname placeholder="name your theme..." type="text" [(ngModel)]="themeName" style="width:45%;"></ion-input>\n\n      </ion-item>\n\n      <button ion-button full color="secondary" style= "width:25vw;" id="saveButton" (click)="saveTheme()">save</button>\n\n    </div>\n\n    <button  (click)="startNewTheme()" style= "width: 100%; font-size: 140%;height: 6vh; background-color: #a09f9f; color: white;padding-left:32%;">start new theme</button>\n\n    <div style="height:7vh;"></div>\n\n    <ion-row id="hometop" style="position:  !important; width:100%; bottom:0px;vertical-align:top ;border-top:1px solid #d3d3d3 !important;">\n\n      <!-- <ion-col col-3></ion-col> -->\n\n\n\n      <ion-col col-4 (click)="navigateToHomePage()" style=" height:100%;padding:15px;padding-top:13px;padding-bottom:13px;font-size:140%;background-color: #f7f4f4;">\n\n        <img style="height:20px;width:20px;"id=chosenTheme [src]= "theme">\n\n      </ion-col>\n\n      <ion-col col-4 (click)="navigateToPalletePage()" style="padding:15px;padding-top:17px;font-size:140%;background-color: #f7f4f4;">\n\n        <div class="tear3" [style.background-color]="color1" style="display:inline-block !important;"></div>\n\n        <div class="tear3" [style.background-color]="color2" style="display:inline-block !important;"></div>\n\n        <div class="tear3" [style.background-color]="color3" style="display:inline-block !important;"></div>\n\n        <div class="tear3" [style.background-color]="color4" style="display:inline-block !important;"></div>\n\n      </ion-col>\n\n      <ion-col col-4 style="padding:15px;font-size:140%;background-color: #f7f4f4;height:100%;">\n\n        fonts\n\n      </ion-col>\n\n    </ion-row>\n\n\n\n\n\n  </ion-grid>\n\n\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\emmas\Desktop\hucomm\src\pages\email\email.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavParams */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_email_composer__["a" /* EmailComposer */], __WEBPACK_IMPORTED_MODULE_6__providers_save_theme_save_theme__["a" /* SaveThemeProvider */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavParams */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_email_composer__["a" /* EmailComposer */], __WEBPACK_IMPORTED_MODULE_5__providers_save_theme_save_theme__["a" /* SaveThemeProvider */]])
     ], EmailPage);
     return EmailPage;
 }());
@@ -701,17 +700,17 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__(31);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(195);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_status_bar__ = __webpack_require__(197);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(194);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_status_bar__ = __webpack_require__(196);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_native_email_composer__ = __webpack_require__(102);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__app_component__ = __webpack_require__(275);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_home_home__ = __webpack_require__(103);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_home_home__ = __webpack_require__(197);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_palette_palette__ = __webpack_require__(198);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_custompalette_custompalette__ = __webpack_require__(105);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_custompalette_custompalette__ = __webpack_require__(104);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_email_email__ = __webpack_require__(201);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_font_font__ = __webpack_require__(199);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_saved_saved__ = __webpack_require__(40);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__providers_save_theme_save_theme__ = __webpack_require__(104);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__providers_save_theme_save_theme__ = __webpack_require__(103);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__ionic_storage__ = __webpack_require__(200);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -788,9 +787,9 @@ var AppModule = /** @class */ (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyApp; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(197);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(195);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_home_home__ = __webpack_require__(103);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(196);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(194);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_home_home__ = __webpack_require__(197);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -835,7 +834,7 @@ var MyApp = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_email_composer__ = __webpack_require__(102);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_save_theme_save_theme__ = __webpack_require__(104);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_save_theme_save_theme__ = __webpack_require__(103);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
