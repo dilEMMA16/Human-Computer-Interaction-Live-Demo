@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Abril+Fatface|Alegreya|Archivo+Black|Arvo|Averia+Libre|Baloo+Tammudu|Barrio|Bitter|Bungee+Inline|Bungee+Outline|Cabin+Sketch|Catamaran:100|Cookie|Domine|EB+Garamond|Electrolize|Fredericka+the+Great|Frijole|Fugaz+One|Hanalei+Fill|IM+Fell+English+SC|Inconsolata|Josefin+Sans|Josefin+Slab|Karla|Kosugi+Maru|Kreon|Lato|Libre+Barcode+39+Text|Lily+Script+One|Lobster|Londrina+Outline|Lustria|Megrim|Merriweather|Molengo|Monofett|Monoton|Montserrat|Muli|Nanum+Gothic|Nixie+One|Oleo+Script|Open+Sans|Oswald|Overpass|Ovo|PT+Sans|Pacifico|Passion+One|Playfair+Display|Poiret+One|Raleway|Righteous|Roboto|Roboto+Condensed|Roboto+Mono|Roboto+Slab|Ruslan+Display|Rye|Sacramento|Sail|Shrikhand|Source+Sans+Pro|Space+Mono|Special+Elite|Ubuntu+Mono|VT323|Vast+Shadow|Walter+Turncoat|Zilla+Slab+Highlight");
+@import url("https://fonts.googleapis.com/css?family=Alegreya+Sans|Assistant|Averia+Libre|Averia+Serif+Libre|Delius|Inconsolata|La+Belle+Aurore|Miriam+Libre|Molengo|Montserrat|Mukta+Malar|Noto+Serif+KR|Rambla|Rosario|Special+Elite|Vibur");
 .ion-ios-add:before {
   content: "\f102";
 }
@@ -25807,7 +25808,7 @@ page-custompalette .circle {
 }
 
 page-custompalette ion-content {
-  font-family: 'Josefin Slab', serif;
+  font-family: 'Montserrat', sans-serif;
   color: #9c9c9c !important;
 }
 
@@ -25916,7 +25917,7 @@ page-email #hometop {
 }
 
 page-email ion-content {
-  font-family: 'Josefin Slab', serif;
+  font-family: 'Montserrat', sans-serif;
   color: #9c9c9c !important;
 }
 
@@ -26020,7 +26021,7 @@ page-font #hometop {
 }
 
 page-font ion-content {
-  font-family: 'Josefin Slab', serif;
+  font-family: 'Montserrat', sans-serif;
   color: #9c9c9c !important;
 }
 
@@ -26100,13 +26101,12 @@ page-home .circle {
   border-radius: 50%;
   border: 1px solid #9c9c9c;
   color: #9c9c9c;
-  font-family: 'Josefin Slab', serif;
   font-size: 100%;
   text-align: center;
 }
 
 page-home ion-content {
-  font-family: 'Josefin Slab', serif;
+  font-family: 'Montserrat', sans-serif;
   color: #9c9c9c !important;
 }
 
@@ -26204,7 +26204,7 @@ page-palette ion-row {
 }
 
 page-palette ion-content {
-  font-family: 'Josefin Slab', serif;
+  font-family: 'Montserrat', sans-serif;
   color: #9c9c9c !important;
   font-size: 100%;
   text-align: center;
@@ -26269,7 +26269,7 @@ page-saved ion-row {
 }
 
 page-saved ion-content {
-  font-family: 'Josefin Slab', serif;
+  font-family: 'Montserrat', sans-serif;
   color: #9c9c9c !important;
   font-size: 100%;
   text-align: center;
