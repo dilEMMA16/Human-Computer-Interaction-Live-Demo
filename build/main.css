@@ -25996,6 +25996,12 @@ page-email .align-bottom {
   align-content: flex-end !important;
 }
 
+page-email div.item-inner:focus, page-email div.item-inner {
+  border-bottom-color: #abbc89 !important;
+  -webkit-box-shadow: inset 0 -1px 0 0 #abbc89 !important;
+  box-shadow: inset 0 -1px 0 0 #abbc89 !important;
+}
+
 page-font * {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
