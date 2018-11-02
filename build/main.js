@@ -6,7 +6,7 @@ webpackJsonp([0],{
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SaveThemeProvider; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ionic_storage__ = __webpack_require__(200);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ionic_storage__ = __webpack_require__(201);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -95,11 +95,13 @@ var SaveThemeProvider = /** @class */ (function () {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CustomPalettePage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EmailPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__email_email__ = __webpack_require__(201);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__saved_saved__ = __webpack_require__(40);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__custompalette_custompalette__ = __webpack_require__(105);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_email_composer__ = __webpack_require__(102);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__saved_saved__ = __webpack_require__(28);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_save_theme_save_theme__ = __webpack_require__(103);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -109,6 +111,152 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+
+
+
+
+
+
+
+var EmailPage = /** @class */ (function () {
+    function EmailPage(navCtrl, navParams, emailComposer, saveThemeProvider) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.emailComposer = emailComposer;
+        this.saveThemeProvider = saveThemeProvider;
+        this.color1 = navParams.get('color1');
+        this.color2 = navParams.get('color2');
+        this.color3 = navParams.get('color3');
+        this.color4 = navParams.get('color4');
+        this.email = "";
+        this.theme = navParams.get('data');
+        this.font1 = navParams.get('font1');
+        this.font2 = navParams.get('font2');
+        this.font1code = navParams.get('font1code');
+        this.font2code = navParams.get('font2code');
+        this.themeName = "";
+    }
+    EmailPage.prototype.navigateToHomePage = function () {
+        this.navCtrl.pop();
+        this.navCtrl.pop();
+        this.navCtrl.pop();
+    };
+    EmailPage.prototype.navigateToPalletePage = function () {
+        this.navCtrl.pop();
+        this.navCtrl.pop();
+    };
+    EmailPage.prototype.navigateToFontPage = function () {
+        this.navCtrl.pop();
+    };
+    EmailPage.prototype.savedThemes = function () {
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_4__saved_saved__["a" /* SavedPage */], {
+            dummy: "dummy",
+            dummy2: "dummy2"
+        });
+    };
+    EmailPage.prototype.startNewTheme = function () {
+        // this.navCtrl.push(HomePage, {
+        //   dummy:"dummy",
+        //   dummy2:"dummy2"
+        // });
+        this.navCtrl.popToRoot();
+    };
+    EmailPage.prototype.triggerSaveTheme = function () {
+        var element = document.getElementById("saveThemeCard");
+        element.style.display = "block";
+        var saveButton = document.getElementById("saveButton");
+        var themeNameInput = document.getElementById("themeNameInput");
+        saveButton.style.display = "block";
+        themeNameInput.style.display = "block";
+    };
+    EmailPage.prototype.saveTheme = function () {
+        console.log(this.themeName);
+        var element = document.getElementById("inputofname");
+        element.style.backgroundColor = "#e8f7ca";
+        element.style.color = "#abbc89";
+        element.innerHTML = "your theme " + this.themeName + " was saved successfully!";
+        this.saveThemeProvider.saveTheme(this.themeName, this.color1, this.color2, this.color3, this.color4, this.font1, this.font2);
+        console.log(this.saveThemeProvider.getAllSavedThemesArray());
+    };
+    EmailPage.prototype.remove = function (array, element) {
+        var index = array.indexOf(element);
+        if (index !== -1) {
+            array.splice(index, 1);
+        }
+    };
+    EmailPage.prototype.sendEmail = function () {
+        //  let el: HTMLElement = document.getElementById("selectedEmail");
+        //let emailContent = color1 + " " + color2 + " " + color3 + " " + color4;
+        var emailContent = "//put in css file:<br>:root{<br>--color-one:" + this.color1 + ";<br>--color-two:" + this.color2 + ";<br>--color-three:" + this.color3 + ";<br>--color-four:" + this.color4 + ";<br>}<br>//to use these css variables =   background-color: var(--color-one);";
+        var email = {
+            to: '',
+            cc: '',
+            attachments: [],
+            subject: 'Eye for Design Theme',
+            body: emailContent,
+            isHtml: true
+        };
+        this.emailComposer.open(email);
+        console.log("send email");
+    };
+    EmailPage.prototype.customThemeChosen = function () {
+        var blues = ["#5d667b", "#55707b", "#45547b", "#5765b0", "#39457b", "#236c75", "#34a0ae", "#040f7b", "#6dbdc9", "#7ab2b9", "#678997", "#80a9b0", "#6683d0", "#82bdd3", "#33377b", "#61808f", "#64c8c6", "#121f7b", "#a4afe3", "#477aed", "#7baefb", "#5a717b", "#60d1d3", "#477aed", "#2360bf", "#6f9df8", "#aacaf4", "#6f7fbe", "#60b5c1", "#4d687b", "#7698b8", "#2badb8", "#1f40b8"];
+        var browns = ["#baa994", "#968663", "#7b6156", "#7b6972", "#7b6e58", "#7b6a72", "#594446", "#bca67f", "#67697b", "#7b4600", "#7b625e", "#bf834e", "#7b403b", "#7b5a43", "#7b4424", "#b7866d", "#7b615b", "#7b5650"];
+        var greens = ["#617b66", "#727b63", "#6c7b4c", "#c5be8b", "#848b8c", "#8cae87", "#7acdad", "#d5ef9a", "#afc185", "#5c7b69", "#6c818f", "#74ab86", "#2e717b", "#589a1f", "#157b5c", "#617b62", "#787b39", "#acd247", "#83d780", "#68ad74", "#cae67c", "#caeff4", "#61c277", "#499259", "#647a7b", "#b8b14e", "#77b800"];
+        var yellows = ["#d3af86", "#e3a83e", "#b79533", "#fdcb73", "#c29a50", "#bfb06b", "#d6a149", "#ffb822", "#d9a42e", "#f8e997", "#ffbd4a", "#feba08", "#dbff6b"];
+        var creams = ["#e3d6cc", "#c9beb5", "#c9beb5", "#e3d6cc", "#cdb98f", "#e1d9d3"];
+        var purples = ["#918696", "#9a82ae", "#524c7b", "#a275a5", "#b958c0", "#3e427d", "#57017b", "#584e9a", "#7a3a7b", "#6f467b", "#4b407b", "#7b1877", "#b760e6", "#dfd1ef", "#5546b8", "#9e38b8", "#575db8", "#cb07bd"];
+        var oranges = ["#bf834e", "#8e6350", "#eb7244", "#e98441", "#cd745f", "#ee9547", "#d3725b", "#cd7746", "#ba6a00", "#eb8119", "#ab6141", "#e8926e", "#ffab37", "#ee9547"];
+        var reds = ["#c94300", "#7b1416", "#d7000b", "#8c412a", "#e76753", "#ea4627", "#b80716"];
+        var pinks = ["#7b536e", "#d9b1b0", "#f3bbaa", "#a16c6a", "#745a7b", "#e76753", "#e8926e", "#7b3446", "#ff9aac", "#ef447a", "#cdaad2", "#b83e81"];
+        var grays = ["#c5bde1", "#a8a8a8", "#78787b"];
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__custompalette_custompalette__["a" /* CustomPalettePage */], {
+            'blues': blues,
+            'browns': browns,
+            'greens': greens,
+            'yellows': yellows,
+            'creams': creams,
+            'purples': purples,
+            'oranges': oranges,
+            'reds': reds,
+            'pinks': pinks,
+            'grays': grays,
+            'theme': "custom"
+        });
+    };
+    EmailPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-email',template:/*ion-inline-start:"C:\Users\emmas\Desktop\hucomm\src\pages\email\email.html"*/'\n\n<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">\n\n\n\n\n\n<script>\n\nvar emailDoc = version.document || version.contentDocument;\n\n// ...and then\n\ncurrentEmail = versionDoc.getElementById("selectedEmail").value;\n\n</script>\n\n\n\n<ion-content no-padding>\n\n  <div (click)="savedThemes()" style="background-color:#8bb2c6;color:white;z-index: 6;position:fixed;left:20px;top:0px;padding:10px;">saved themes\n\n  </div>\n\n  <ion-grid class="vertical-align-content" style="padding:0px;">\n\n    <!-- <ion-row style="position:relative;">\n\n\n\n      <ion-col col-3></ion-col>\n\n      <ion-col col-2>\n\n        <div class="circle" (click)="navigateToHomePage()" style="background-color:#9c9c9c; color:white;">theme</div>\n\n      </ion-col>\n\n      <ion-col col-2>\n\n        <div class="circle" (click)="navigateToPalletePage()" style="background-color:#9c9c9c; color:white;">colors</div>\n\n      </ion-col>\n\n      <ion-col col-2>\n\n        <div class="circle" style="background-color:#9c9c9c; color:white;">fonts</div>\n\n      </ion-col>\n\n      <ion-col col-3></ion-col>\n\n      <div  style="width:100%; height:9vh; text-align:center; padding-top: 20px; font-size:140%">your selections</div>\n\n    </ion-row> -->\n\n    <ion-row style="width:100%; text-align:center; padding-top:20px;height:15vh;margin:5px;font-style: italic;">\n\n      <ion-col col-12 style="padding:15px;padding-top:30px;">\n\n        <span style="font-family: \'La Belle Aurore\', cursive;font-size:180%;">your selected theme</span>\n\n      </ion-col>\n\n    </ion-row>\n\n    <ion-row >\n\n      <ion-col class = "col col-12" style="width:21%;border-bottom: 1px solid #cecece; padding-bottom: 10px;margin-bottom:31px;">colors</ion-col>\n\n    </ion-row>\n\n    <ion-row>\n\n      <ion-col class="col col-3">\n\n        <div class="tear" [style.background-color]="color1" style="display:inline-block !important;"></div>\n\n      </ion-col>\n\n      <ion-col class="col col-3">\n\n        <div class="tear" [style.background-color]="color2" style="display:inline-block !important;"></div>\n\n      </ion-col>\n\n      <ion-col class="col col-3">\n\n        <div class="tear" [style.background-color]="color3" style="display:inline-block !important;"></div>\n\n      </ion-col>\n\n      <ion-col class="col col-3">\n\n        <div class="tear" [style.background-color]="color4" style="display:inline-block !important;"></div>\n\n      </ion-col>\n\n    </ion-row><br>\n\n    <ion-row style="font-size: 80%;">\n\n      <ion-col class="col col-3" >{{color1}}</ion-col>\n\n      <ion-col class="col col-3">{{color2}}</ion-col>\n\n      <ion-col class="col col-3">{{color3}}</ion-col>\n\n      <ion-col class="col col-3">{{color4}}</ion-col>\n\n    </ion-row>\n\n    <!-- <ion-row>\n\n      <ion-col class = "col col-6">\n\n          <div class="tear summary" [id]="color1" [style.background-color]="color1" style="display:inline-block !important;margin:10px;"></div>\n\n          <br>{{color1}}\n\n      </ion-col>\n\n      <ion-col class = "col col-6">\n\n          <div class="tear summary" [id]="color2" [style.background-color]="color2" style="display:inline-block !important;margin:10px;"></div>\n\n            <br>{{color2}}\n\n      </ion-col>\n\n    </ion-row>\n\n    <ion-row>\n\n      <ion-col class = "col col-6">\n\n          <div class="tear summary" [id]="color3" [style.background-color]="color3" style="display:inline-block !important;margin:10px;"></div>\n\n            <br>{{color3}}\n\n      </ion-col>\n\n      <ion-col class = "col col-6">\n\n          <div class="tear summary" [id]="color4" [style.background-color]="color4" style="display:inline-block !important;margin:10px;"></div>\n\n            <br>{{color4}}\n\n      </ion-col>\n\n    </ion-row> -->\n\n    <br><br>\n\n    <ion-row >\n\n      <ion-col class = "col col-12" style="width:21%;border-bottom: 1px solid #cecece; padding-bottom: 15px;margin-bottom:10px;">fonts</ion-col>\n\n    </ion-row>\n\n    <ion-row>\n\n      <ion-col class="col col-12"[style.font-family]=font1code style="text-align:center;font-size:1.75em;padding:0px !important;"><h1>{{font1}}</h1></ion-col>\n\n    </ion-row>\n\n    <ion-row>\n\n      <ion-col class="col col-12" [style.font-family]=font2code  style="text-align:center;font-size:1em;padding:0px !important;"><h2>{{font2}}</h2></ion-col>\n\n    </ion-row>\n\n    <br>\n\n\n\n        <button  (click)="sendEmail()" style= "font-size: 140%;width: 100%; height: 6vh; background-color: #c4bb6f; color: white; text-align:center; padding-left:26%;">email the css code</button>\n\n        <button   (click)="triggerSaveTheme()" style= "width: 100%; font-size: 140%;height: 6vh; background-color: #8bb2c6; color: white;padding-left:29%;">save your theme</button>\n\n        <div id=saveThemeCard style="display:none !important;padding:30px;">\n\n          <ion-item id=themeNameInput style="margin-right:5px;">\n\n            <!-- <ion-label floating>Name your theme ...</ion-label> -->\n\n            <ion-input id=inputofname placeholder="name your theme..." type="text" [(ngModel)]="themeName" style="width:45%;"></ion-input>\n\n          </ion-item>\n\n          <button ion-button full  style= "width:25vw;background-color:#abbc89;color:white;" id="saveButton" (click)="saveTheme()">save</button>\n\n        </div>\n\n        <button  (click)="startNewTheme()" style= "width: 100%; font-size: 140%;height: 6vh; background-color: #a09f9f; color: white;padding-left:29%;">start new theme</button>\n\n\n\n\n\n    <ion-row id="hometop" style="position:  !important; width:100%; bottom:0px;vertical-align:top ;border-top:1px solid #d3d3d3 !important;">\n\n      <!-- <ion-col col-3></ion-col> -->\n\n\n\n      <ion-col col-4 (click)="navigateToHomePage()" style=" height:100%;padding:15px;padding-top:13px;padding-bottom:3px;font-size:140%;background-color: #f7f4f4;border-bottom:10px solid #abbc89;">\n\n        <img style="height:20px;width:20px;"id=chosenTheme [src]= "theme">\n\n      </ion-col>\n\n      <ion-col col-4 (click)="navigateToPalletePage()" style="height:100%;padding:10px;font-size:140%;background-color: #f7f4f4;border-bottom:10px solid #c1775d;">\n\n        <div class="tear3" [style.background-color]="color1" style="display:inline-block !important;"></div>\n\n        <div class="tear3" [style.background-color]="color2" style="display:inline-block !important;"></div>\n\n        <div class="tear3" [style.background-color]="color3" style="display:inline-block !important;"></div>\n\n        <div class="tear3" [style.background-color]="color4" style="display:inline-block !important;"></div>\n\n      </ion-col>\n\n      <ion-col (click)=navigateToFontPage() col-4 style="padding:9px;font-size:140%;background-color: #f7f4f4;height:100%;border-bottom:10px solid #c4bb6f;">\n\n        <span [style.font-family]=font1code>A</span><span [style.font-family]=font2code>a</span>\n\n      </ion-col>\n\n    </ion-row>\n\n\n\n\n\n  </ion-grid>\n\n\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\emmas\Desktop\hucomm\src\pages\email\email.html"*/
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavParams */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_email_composer__["a" /* EmailComposer */], __WEBPACK_IMPORTED_MODULE_5__providers_save_theme_save_theme__["a" /* SaveThemeProvider */]])
+    ], EmailPage);
+    return EmailPage;
+}());
+
+//# sourceMappingURL=email.js.map
+
+/***/ }),
+
+/***/ 105:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CustomPalettePage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__email_email__ = __webpack_require__(104);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__saved_saved__ = __webpack_require__(28);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__customfont_customfont__ = __webpack_require__(202);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
 
 
 
@@ -133,6 +281,19 @@ var CustomPalettePage = /** @class */ (function () {
     CustomPalettePage.prototype.navigateToHomePage = function () {
         this.navCtrl.pop();
     };
+    CustomPalettePage.prototype.navigateToCustomFontPage = function () {
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_4__customfont_customfont__["a" /* CustomFontPage */], {
+            'data': 'assets/imgs/custom.png',
+            'color1': this.chosenColors[0],
+            'color2': this.chosenColors[1],
+            'color3': this.chosenColors[2],
+            'color4': this.chosenColors[3],
+            'font1': "Calibri",
+            'font2': "Times New Roman",
+            'font1code': 'Calibri',
+            'font2code': 'Times New Roman'
+        });
+    };
     CustomPalettePage.prototype.navigateToEmailPage = function () {
         // //reset selections
         // for (let color of this.chosenColors) {
@@ -152,11 +313,15 @@ var CustomPalettePage = /** @class */ (function () {
         //     document.getElementById(color).style.display = "inline-flex";
         // }
         this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__email_email__["a" /* EmailPage */], {
-            'data': 'custom',
+            'data': 'assets/imgs/custom.png',
             'color1': this.chosenColors[0],
             'color2': this.chosenColors[1],
             'color3': this.chosenColors[2],
             'color4': this.chosenColors[3],
+            'font1': "Calibri",
+            'font2': "Times New Roman",
+            'font1code': 'Calibri',
+            'font2code': 'Times New Roman'
         });
     };
     CustomPalettePage.prototype.savedThemes = function () {
@@ -193,7 +358,7 @@ var CustomPalettePage = /** @class */ (function () {
             }
             //if length == 4 ---> go to font page
             if (this.chosenColors.length == 4) {
-                this.navigateToEmailPage();
+                this.navigateToCustomFontPage();
             }
             //return
             return;
@@ -226,7 +391,7 @@ var CustomPalettePage = /** @class */ (function () {
         }
         //if length == 4 ---> go to font page
         if (this.chosenColors.length == 4) {
-            this.navigateToEmailPage();
+            this.navigateToCustomFontPage();
         }
     };
     CustomPalettePage.prototype.remove = function (array, element) {
@@ -248,7 +413,7 @@ var CustomPalettePage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 113:
+/***/ 114:
 /***/ (function(module, exports) {
 
 function webpackEmptyAsyncContext(req) {
@@ -261,11 +426,11 @@ function webpackEmptyAsyncContext(req) {
 webpackEmptyAsyncContext.keys = function() { return []; };
 webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
 module.exports = webpackEmptyAsyncContext;
-webpackEmptyAsyncContext.id = 113;
+webpackEmptyAsyncContext.id = 114;
 
 /***/ }),
 
-/***/ 154:
+/***/ 155:
 /***/ (function(module, exports) {
 
 function webpackEmptyAsyncContext(req) {
@@ -278,20 +443,20 @@ function webpackEmptyAsyncContext(req) {
 webpackEmptyAsyncContext.keys = function() { return []; };
 webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
 module.exports = webpackEmptyAsyncContext;
-webpackEmptyAsyncContext.id = 154;
+webpackEmptyAsyncContext.id = 155;
 
 /***/ }),
 
-/***/ 197:
+/***/ 198:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__palette_palette__ = __webpack_require__(198);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__custompalette_custompalette__ = __webpack_require__(104);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__saved_saved__ = __webpack_require__(40);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__palette_palette__ = __webpack_require__(199);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__custompalette_custompalette__ = __webpack_require__(105);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__saved_saved__ = __webpack_require__(28);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -336,7 +501,8 @@ var HomePage = /** @class */ (function () {
             'oranges': oranges,
             'reds': reds,
             'pinks': pinks,
-            'grays': grays
+            'grays': grays,
+            'theme': 'assets/imgs/custom.png'
         });
     };
     HomePage.prototype.navigateToPalettePage = function (theme) {
@@ -426,15 +592,15 @@ var HomePage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 198:
+/***/ 199:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PalettePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__font_font__ = __webpack_require__(199);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__saved_saved__ = __webpack_require__(40);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__font_font__ = __webpack_require__(200);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__saved_saved__ = __webpack_require__(28);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -469,12 +635,93 @@ var PalettePage = /** @class */ (function () {
         this.navCtrl.pop();
     };
     PalettePage.prototype.navigateToFontPage = function (chosenPalette) {
+        var fontcombo1 = new Array();
+        var fontcombo2 = new Array();
+        var fontcombo3 = new Array();
+        var fontcombo4 = new Array();
+        var fontcombo5 = new Array();
+        //based on what theme is = pass in palettes
+        if (this.theme.includes("sophisticated")) {
+            fontcombo1 = ["Raleway", "Roboto Slab", "'Raleway', sans-serif", "'Roboto Slab', serif"];
+            fontcombo2 = ["Sail", "Overpass", "'Sail', cursive", "'Overpass', sans-serif"];
+            fontcombo3 = ["Space Mono", "Nanum Gothic", "'Space Mono', monospace", "'Nanum Gothic', sans-serif"];
+            fontcombo4 = ["Domine", "Inconsolata", "'Domine', serif", "'Inconsolata', monospace"];
+            fontcombo5 = ["Playfair Display", "Source Sans Pro", "'Playfair Display', serif", "'Source Sans Pro', sans-serif"];
+        }
+        else if (this.theme.includes("cool")) {
+            fontcombo1 = ["Abril Fatface", "Courier New", "'Abril Fatface', cursive", "Courier"];
+            fontcombo2 = ["Cookie", "Calibri", "'Cookie', cursive", "Calibri"];
+            fontcombo3 = ["Poiret One", "EB Garamond", "'Poiret One', cursive", "'EB Garamond', serif"];
+            fontcombo4 = ["Cabin Sketch", "Nanum Gothic", "'Cabin Sketch', cursive", "'Nanum Gothic', sans-serif"];
+            fontcombo5 = ["Merriweather", "Montserrat", "'Merriweather', serif", "'Montserrat', sans-serif"];
+        }
+        else if (this.theme.includes("warm")) {
+            fontcombo1 = ["Righteous", "Roboto", "'Righteous', cursive", "'Roboto', sans-serif"];
+            fontcombo2 = ["Passion One", "Roboto Condensed", "'Passion One', cursive", "'Roboto Condensed', sans-serif"];
+            fontcombo3 = ["Special Elite", "Open Sans", "'Special Elite', cursive", "'Open Sans', sans-serif"];
+            fontcombo4 = ["Hanalei Fill", "Karla", "'Hanalei Fill', cursive", "'Karla', sans-serif"];
+            fontcombo5 = ["Averia Libre", "Montserrat", "'Averia Libre', cursive", "'Montserrat', sans-serif"];
+        }
+        else if (this.theme.includes("natural")) {
+            fontcombo1 = ["Pacifico", "Overpass", "'Pacifico', cursive", "'Overpass', sans-serif"];
+            fontcombo2 = ["Alegreya", "EB Garamond", "'Alegreya', serif", "'EB Garamond', serif"];
+            fontcombo3 = ["Sacramento", "Calibri", "'Sacramento', cursive", "Calibri"];
+            fontcombo4 = ["IM Fell English SC", "Montserrat", "'IM Fell English SC', serif", "'Montserrat', sans-serif"];
+            fontcombo5 = ["Londrina Outline", "Courier New", "'Londrina Outline', cursive", "Courier"];
+        }
+        else if (this.theme.includes("rustic")) {
+            fontcombo1 = ["Inconsolata", "Inconsolata", "'Inconsolata', monospace", "'Inconsolata', monospace"];
+            fontcombo2 = ["Bitter", "PT Sans", "'Bitter', serif", "'PT Sans', sans-serif"];
+            fontcombo3 = ["Oswald", "EB Garamond", "'Oswald', sans-serif", "'EB Garamond', serif"];
+            fontcombo4 = ["Fredericka the Great", "Montserrat", "'Fredericka the Great', cursive", "'Montserrat', sans-serif"];
+            fontcombo5 = ["Barrio", "Calibri", "'Barrio', cursive", "Calibri"];
+        }
+        else if (this.theme.includes("tech")) {
+            fontcombo1 = ["Roboto Mono", "Roboto Condensed", "'Roboto Mono', monospace", "'Roboto Condensed', sans-serif"];
+            fontcombo2 = ["Libre Barcode", "Inconsolata", "'Libre Barcode 39 Text', cursive", "'Inconsolata', monospace"];
+            fontcombo3 = ["Ubuntu Mono", "Nanum Gothic", "'Ubuntu Mono', monospace", "'Nanum Gothic', sans-serif"];
+            fontcombo4 = ["Zilla Slab", "Courier New", "'Zilla Slab Highlight', cursive", "Courier"];
+            fontcombo5 = ["Monofett", "Electrolize", "'Monofett', cursive", "'Electrolize', sans-serif"];
+        }
+        else if (this.theme.includes("wellbeing")) {
+            fontcombo1 = ["Archivo Black", "Karla", "'Archivo Black', sans-serif", "'Karla', sans-serif"];
+            fontcombo2 = ["Oleo Script", "Overpass", "'Oleo Script', cursive", "'Overpass', sans-serif"];
+            fontcombo3 = ["Shrikhand", "Open Sans", "'Shrikhand', cursive", "'Open Sans', sans-serif"];
+            fontcombo4 = ["Lily Script One", "Montserrat", "'Lily Script One', cursive", "'Montserrat', sans-serif"];
+            fontcombo5 = ["Molengo", "Calibri", "'Molengo', sans-serif", "Calibri"];
+        }
+        else if (this.theme.includes("fall")) {
+            fontcombo1 = ["Arvo", "Lato", "'Arvo', serif", "'Lato', sans-serif"];
+            fontcombo2 = ["Josefin Slab", "Josefin Sans", "'Josefin Slab', serif", "'Josefin Sans', sans-serif"];
+            fontcombo3 = ["Lustria", "Roboto Condensed", "'Lustria', serif", "'Roboto Condensed', sans-serif"];
+            fontcombo4 = ["Nixie One", "Nanum Gothic", "'Nixie One', cursive", "'Nanum Gothic', sans-serif"];
+            fontcombo5 = ["Walter Turncoat", "Kreon", "'Walter Turncoat', cursive", "'Kreon', serif"];
+        }
+        else if (this.theme.includes("summer")) {
+            fontcombo1 = ["Baloo Tammudu", "Calibri", "'Baloo Tammudu', cursive", "Calibri"];
+            fontcombo2 = ["Lobster", "EB Garamond", "'Lobster', cursive", "'EB Garamond', serif"];
+            fontcombo3 = ["Fugaz One", "PT Sans", "'Fugaz One', cursive", "'PT Sans', sans-serif"];
+            fontcombo4 = ["Frijole", "Karla", "'Frijole', cursive", "'Karla', sans-serif"];
+            fontcombo5 = ["Ovo", "Muli", "'Ovo', serif", "'Muli', sans-serif"];
+        }
+        else if (this.theme.includes("bold")) {
+            fontcombo1 = ["Ruslan Display", "EB Garamond", "'Ruslan Display', cursive", "'EB Garamond', serif"];
+            fontcombo2 = ["Monoton", "Electrolize", "'Monoton', cursive", "'Electrolize', sans-serif"];
+            fontcombo3 = ["VT323", "PT Sans", "'VT323', monospace", "'PT Sans', sans-serif"];
+            fontcombo4 = ["Bungee Inline", "Montserrat", "'Bungee Inline', cursive", "'Montserrat', sans-serif"];
+            fontcombo5 = ["Rye", "Roboto Slab", "'Rye', cursive", "'Roboto Slab', serif"];
+        }
         this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__font_font__["a" /* FontPage */], {
             'data': this.theme,
             'color1': chosenPalette[0],
             'color2': chosenPalette[1],
             'color3': chosenPalette[2],
-            'color4': chosenPalette[3]
+            'color4': chosenPalette[3],
+            'font1': fontcombo1,
+            'font2': fontcombo2,
+            'font3': fontcombo3,
+            'font4': fontcombo4,
+            'font5': fontcombo5
         });
     };
     PalettePage = __decorate([
@@ -490,13 +737,15 @@ var PalettePage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 199:
+/***/ 200:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FontPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__saved_saved__ = __webpack_require__(28);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__email_email__ = __webpack_require__(104);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -509,15 +758,48 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
+
 var FontPage = /** @class */ (function () {
     function FontPage(navCtrl, navParams) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
+        this.fontcombo1 = new Array();
+        this.fontcombo2 = new Array();
+        this.fontcombo3 = new Array();
+        this.fontcombo4 = new Array();
+        this.fontcombo5 = new Array();
         this.color1 = navParams.get('color1');
         this.color2 = navParams.get('color2');
         this.color3 = navParams.get('color3');
         this.color4 = navParams.get('color4');
         this.theme = "" + navParams.get('data') + "";
+        this.fontcombo1 = navParams.get('font1');
+        this.fontcombo2 = navParams.get('font2');
+        this.fontcombo3 = navParams.get('font3');
+        this.fontcombo4 = navParams.get('font4');
+        this.fontcombo5 = navParams.get('font5');
+        this.font1nameheader = this.fontcombo1[0];
+        this.font1namebody = this.fontcombo1[1];
+        this.font1codeheader = this.fontcombo1[2];
+        this.font1codebody = this.fontcombo1[3];
+        this.font2nameheader = this.fontcombo2[0];
+        this.font2namebody = this.fontcombo2[1];
+        this.font2codeheader = this.fontcombo2[2];
+        this.font2codebody = this.fontcombo2[3];
+        this.font3nameheader = this.fontcombo3[0];
+        this.font3namebody = this.fontcombo3[1];
+        this.font3codeheader = this.fontcombo3[2];
+        this.font3codebody = this.fontcombo3[3];
+        this.font4nameheader = this.fontcombo4[0];
+        this.font4namebody = this.fontcombo4[1];
+        this.font4codeheader = this.fontcombo4[2];
+        this.font4codebody = this.fontcombo4[3];
+        this.font5nameheader = this.fontcombo5[0];
+        this.font5namebody = this.fontcombo5[1];
+        this.font5codeheader = this.fontcombo5[2];
+        this.font5codebody = this.fontcombo5[3];
+        //font combos = 0 --> header name, 1 --> body name, 2 --> header css, 3 --> body css
     }
     FontPage.prototype.navigateToHomePage = function () {
         this.navCtrl.pop();
@@ -526,9 +808,62 @@ var FontPage = /** @class */ (function () {
     FontPage.prototype.navigateToPalletePage = function () {
         this.navCtrl.pop();
     };
+    FontPage.prototype.navigateToEmailPage = function (comboChosen) {
+        var font1 = "";
+        var font2 = "";
+        var font1code = "";
+        var font2code = "";
+        if (comboChosen == 1) {
+            font1 = this.font1nameheader;
+            font2 = this.font1namebody;
+            font1code = this.font1codeheader;
+            font2code = this.font1codebody;
+        }
+        if (comboChosen == 2) {
+            font1 = this.font2nameheader;
+            font2 = this.font2namebody;
+            font1code = this.font2codeheader;
+            font2code = this.font2codebody;
+        }
+        if (comboChosen == 3) {
+            font1 = this.font3nameheader;
+            font2 = this.font3namebody;
+            font1code = this.font3codeheader;
+            font2code = this.font3codebody;
+        }
+        if (comboChosen == 4) {
+            font1 = this.font4nameheader;
+            font2 = this.font4namebody;
+            font1code = this.font4codeheader;
+            font2code = this.font4codebody;
+        }
+        if (comboChosen == 5) {
+            font1 = this.font5nameheader;
+            font2 = this.font5namebody;
+            font1code = this.font5codeheader;
+            font2code = this.font5codebody;
+        }
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_3__email_email__["a" /* EmailPage */], {
+            'color1': this.color1,
+            'color2': this.color2,
+            'color3': this.color3,
+            'color4': this.color4,
+            'data': this.theme,
+            'font1': font1,
+            'font2': font2,
+            'font1code': font1code,
+            'font2code': font2code
+        });
+    };
+    FontPage.prototype.savedThemes = function () {
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__saved_saved__["a" /* SavedPage */], {
+            dummy: "dummy",
+            dummy2: "dummy2"
+        });
+    };
     FontPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-font',template:/*ion-inline-start:"C:\Users\emmas\Desktop\hucomm\src\pages\font\font.html"*/'\n\n<ion-header>\n\n  <ion-navbar>\n\n    <ion-title>\n\n      font page placeholder\n\n    </ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content no-padding>\n\n  <ion-grid style="padding:0px;">\n\n    <ion-row id="hometop" style="position: fixed; width:100%; bottom:0px;vertical-align:top ;border-top:1px solid #d3d3d3 !important;">\n\n      <!-- <ion-col col-3></ion-col> -->\n\n\n\n      <ion-col col-4 (click)="navigateToHomePage()" style=" padding:15px;padding-top:13px;padding-bottom:3px;font-size:140%;background-color:#f7f4f4;border-bottom:10px solid #abbc89;">\n\n        <img style="height:23px;width:23px;"id=chosenTheme [src]= "theme">\n\n      </ion-col>\n\n      <ion-col col-4 (click)="navigateToPalletePage()" style="padding:15px;padding-top:10px;font-size:140%;background-color:#f7f4f4;border-bottom:10px solid #c1775d;">\n\n        <div class="tear3" [style.background-color]="color1" style="display:inline-block !important;"></div>\n\n        <div class="tear3" [style.background-color]="color2" style="display:inline-block !important;"></div>\n\n        <div class="tear3" [style.background-color]="color3" style="display:inline-block !important;"></div>\n\n        <div class="tear3" [style.background-color]="color4" style="display:inline-block !important;"></div>\n\n      </ion-col>\n\n      <ion-col col-4 style="padding:12px;font-size:140%;background-color:#c4bb6f;color:white;">\n\n        fonts\n\n      </ion-col>\n\n    </ion-row>\n\n  </ion-grid>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\emmas\Desktop\hucomm\src\pages\font\font.html"*/
+            selector: 'page-font',template:/*ion-inline-start:"C:\Users\emmas\Desktop\hucomm\src\pages\font\font.html"*/'\n\n\n\n\n\n<ion-content no-padding>\n\n  <div (click)="savedThemes()" style="background-color:#8bb2c6;color:white;z-index: 6;position:fixed;left:20px;top:0px;padding:10px;">saved themes\n\n  </div>\n\n  <ion-grid class="vertical-align-content" style="padding:0px;">\n\n\n\n        <ion-row style="width:100%; text-align:center; padding:5px;padding-top:20px;height:15vh;margin:5px;font-style: italic;">\n\n          <ion-col col-12 style="padding:15px;padding-top:30px;">\n\n            <span style="font-family: \'La Belle Aurore\', cursive;font-size:180%;">choose a font combo</span>\n\n          </ion-col>\n\n        </ion-row>\n\n\n\n\n\n        <ion-row style="height:13vh;margin-bottom:5px;" (click)=navigateToEmailPage(1)>\n\n          <ion-col col-2 class = "col" style="font-size:80%;padding-left:5px;">combo #1 </ion-col>\n\n          <ion-col class = "col" col-10 style="border-bottom:1px solid #cecece;padding-bottom:10px;">\n\n            <span style="font-size:1.75em;" [style.font-family]=font1codeheader >{{font1nameheader}}</span><br>\n\n            <span style="font-size:1em;" [style.font-family]=font1codebody >{{font1namebody}}</span>\n\n          </ion-col>\n\n        </ion-row>\n\n        <ion-row style="height:13vh;margin-bottom:5px;" (click)=navigateToEmailPage(2)>\n\n          <ion-col col-2 class = "col" style="font-size:80%;">combo #2 </ion-col>\n\n          <ion-col class = "col" col-10 style="border-bottom:1px solid #cecece;padding-bottom:10px;">\n\n            <span style="font-size:1.75em;" [style.font-family]=font2codeheader >{{font2nameheader}}</span><br>\n\n            <span style="font-size:1em;" [style.font-family]=font2codebody >{{font2namebody}}</span>\n\n          </ion-col>\n\n        </ion-row>\n\n\n\n        <ion-row style="height:13vh;margin-bottom:5px;" (click)=navigateToEmailPage(3)>\n\n          <ion-col col-2 class = "col" style="font-size:80%;">combo #3 </ion-col>\n\n          <ion-col class = "col" col-10 style="border-bottom:1px solid #cecece;padding-bottom:10px;">\n\n            <span style="font-size:1.75em;" [style.font-family]=font3codeheader >{{font3nameheader}}</span><br>\n\n            <span style="font-size:1em;" [style.font-family]=font3codebody >{{font3namebody}}</span>\n\n          </ion-col>\n\n        </ion-row>\n\n\n\n        <ion-row style="height:13vh;margin-bottom:5px;" (click)=navigateToEmailPage(4)>\n\n          <ion-col col-2 class = "col" style="font-size:80%;">combo #4 </ion-col>\n\n          <ion-col class = "col" col-10 style="border-bottom:1px solid #cecece;padding-bottom:10px;">\n\n            <span style="font-size:1.75em;" [style.font-family]=font4codeheader >{{font4nameheader}}</span><br>\n\n            <span style="font-size:1em;" [style.font-family]=font4codebody >{{font4namebody}}</span>\n\n          </ion-col>\n\n        </ion-row>\n\n\n\n        <ion-row style="height:13vh;margin-bottom:5px;" (click)=navigateToEmailPage(5)>\n\n          <ion-col col-2 class = "col" style="font-size:80%;">combo #5 </ion-col>\n\n          <ion-col class = "col" col-10 style="border-bottom:1px solid #cecece;padding-bottom:10px;">\n\n            <span style="font-size:1.75em;" [style.font-family]=font5codeheader >{{font5nameheader}}</span><br>\n\n            <span style="font-size:1em;" [style.font-family]=font5codebody >{{font5namebody}}</span>\n\n          </ion-col>\n\n        </ion-row>\n\n\n\n\n\n\n\n\n\n\n\n\n\n    <ion-row id="hometop" style="position: fixed; width:100%; bottom:0px;vertical-align:top ;border-top:1px solid #d3d3d3 !important;">\n\n      <!-- <ion-col col-3></ion-col> -->\n\n\n\n      <ion-col col-4 (click)="navigateToHomePage()" style=" padding:15px;padding-top:13px;padding-bottom:3px;font-size:140%;background-color:#f7f4f4;border-bottom:10px solid #abbc89;">\n\n        <img style="height:23px;width:23px;"id=chosenTheme [src]= "theme">\n\n      </ion-col>\n\n      <ion-col col-4 (click)="navigateToPalletePage()" style="padding:10px;padding-top:10px;font-size:140%;background-color:#f7f4f4;border-bottom:10px solid #c1775d;">\n\n        <div class="tear3" [style.background-color]="color1" style="display:inline-block !important;"></div>\n\n        <div class="tear3" [style.background-color]="color2" style="display:inline-block !important;"></div>\n\n        <div class="tear3" [style.background-color]="color3" style="display:inline-block !important;"></div>\n\n        <div class="tear3" [style.background-color]="color4" style="display:inline-block !important;"></div>\n\n      </ion-col>\n\n      <ion-col col-4 style="padding:12px;font-size:140%;height:100%;background-color:#c4bb6f;color:white;">\n\n        fonts\n\n      </ion-col>\n\n    </ion-row>\n\n  </ion-grid>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\emmas\Desktop\hucomm\src\pages\font\font.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavParams */]])
     ], FontPage);
@@ -539,17 +874,14 @@ var FontPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 201:
+/***/ 202:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EmailPage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CustomFontPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__custompalette_custompalette__ = __webpack_require__(104);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_email_composer__ = __webpack_require__(102);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__saved_saved__ = __webpack_require__(40);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_save_theme_save_theme__ = __webpack_require__(103);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__saved_saved__ = __webpack_require__(28);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -563,128 +895,49 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-
-
-
-var EmailPage = /** @class */ (function () {
-    function EmailPage(navCtrl, navParams, emailComposer, saveThemeProvider) {
+var CustomFontPage = /** @class */ (function () {
+    function CustomFontPage(navCtrl, navParams) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
-        this.emailComposer = emailComposer;
-        this.saveThemeProvider = saveThemeProvider;
         this.color1 = navParams.get('color1');
         this.color2 = navParams.get('color2');
         this.color3 = navParams.get('color3');
         this.color4 = navParams.get('color4');
-        this.email = "";
-        this.theme = "assets/imgs/" + navParams.get('data') + ".png";
-        this.font1 = "Calibri";
-        this.font2 = "Times New Roman";
-        this.themeName = "";
+        this.theme = "" + navParams.get('data') + "";
     }
-    EmailPage.prototype.navigateToHomePage = function () {
+    CustomFontPage.prototype.navigateToHomePage = function () {
         this.navCtrl.pop();
         this.navCtrl.pop();
     };
-    EmailPage.prototype.navigateToPalletePage = function () {
+    CustomFontPage.prototype.navigateToPalletePage = function () {
         this.navCtrl.pop();
     };
-    EmailPage.prototype.savedThemes = function () {
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_4__saved_saved__["a" /* SavedPage */], {
+    CustomFontPage.prototype.savedThemes = function () {
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__saved_saved__["a" /* SavedPage */], {
             dummy: "dummy",
             dummy2: "dummy2"
         });
     };
-    EmailPage.prototype.startNewTheme = function () {
-        // this.navCtrl.push(HomePage, {
-        //   dummy:"dummy",
-        //   dummy2:"dummy2"
-        // });
-        this.navCtrl.popToRoot();
-    };
-    EmailPage.prototype.triggerSaveTheme = function () {
-        var element = document.getElementById("saveThemeCard");
-        element.style.display = "block";
-        var saveButton = document.getElementById("saveButton");
-        var themeNameInput = document.getElementById("themeNameInput");
-        saveButton.style.display = "block";
-        themeNameInput.style.display = "block";
-    };
-    EmailPage.prototype.saveTheme = function () {
-        console.log(this.themeName);
-        var element = document.getElementById("inputofname");
-        element.style.backgroundColor = "#e8f7ca";
-        element.style.color = "#abbc89";
-        element.innerHTML = "your theme " + this.themeName + " was saved successfully!";
-        this.saveThemeProvider.saveTheme(this.themeName, this.color1, this.color2, this.color3, this.color4, this.font1, this.font2);
-        console.log(this.saveThemeProvider.getAllSavedThemesArray());
-    };
-    EmailPage.prototype.remove = function (array, element) {
-        var index = array.indexOf(element);
-        if (index !== -1) {
-            array.splice(index, 1);
-        }
-    };
-    EmailPage.prototype.sendEmail = function () {
-        //  let el: HTMLElement = document.getElementById("selectedEmail");
-        //let emailContent = color1 + " " + color2 + " " + color3 + " " + color4;
-        var emailContent = "//put in css file:<br>:root{<br>--color-one:" + this.color1 + ";<br>--color-two:" + this.color2 + ";<br>--color-three:" + this.color3 + ";<br>--color-four:" + this.color4 + ";<br>}<br>//to use these css variables =   background-color: var(--color-one);";
-        var email = {
-            to: '',
-            cc: '',
-            attachments: [],
-            subject: 'Eye for Design Theme',
-            body: emailContent,
-            isHtml: true
-        };
-        this.emailComposer.open(email);
-        console.log("send email");
-    };
-    EmailPage.prototype.customThemeChosen = function () {
-        var blues = ["#5d667b", "#55707b", "#45547b", "#5765b0", "#39457b", "#236c75", "#34a0ae", "#040f7b", "#6dbdc9", "#7ab2b9", "#678997", "#80a9b0", "#6683d0", "#82bdd3", "#33377b", "#61808f", "#64c8c6", "#121f7b", "#a4afe3", "#477aed", "#7baefb", "#5a717b", "#60d1d3", "#477aed", "#2360bf", "#6f9df8", "#aacaf4", "#6f7fbe", "#60b5c1", "#4d687b", "#7698b8", "#2badb8", "#1f40b8"];
-        var browns = ["#baa994", "#968663", "#7b6156", "#7b6972", "#7b6e58", "#7b6a72", "#594446", "#bca67f", "#67697b", "#7b4600", "#7b625e", "#bf834e", "#7b403b", "#7b5a43", "#7b4424", "#b7866d", "#7b615b", "#7b5650"];
-        var greens = ["#617b66", "#727b63", "#6c7b4c", "#c5be8b", "#848b8c", "#8cae87", "#7acdad", "#d5ef9a", "#afc185", "#5c7b69", "#6c818f", "#74ab86", "#2e717b", "#589a1f", "#157b5c", "#617b62", "#787b39", "#acd247", "#83d780", "#68ad74", "#cae67c", "#caeff4", "#61c277", "#499259", "#647a7b", "#b8b14e", "#77b800"];
-        var yellows = ["#d3af86", "#e3a83e", "#b79533", "#fdcb73", "#c29a50", "#bfb06b", "#d6a149", "#ffb822", "#d9a42e", "#f8e997", "#ffbd4a", "#feba08", "#dbff6b"];
-        var creams = ["#e3d6cc", "#c9beb5", "#c9beb5", "#e3d6cc", "#cdb98f", "#e1d9d3"];
-        var purples = ["#918696", "#9a82ae", "#524c7b", "#a275a5", "#b958c0", "#3e427d", "#57017b", "#584e9a", "#7a3a7b", "#6f467b", "#4b407b", "#7b1877", "#b760e6", "#dfd1ef", "#5546b8", "#9e38b8", "#575db8", "#cb07bd"];
-        var oranges = ["#bf834e", "#8e6350", "#eb7244", "#e98441", "#cd745f", "#ee9547", "#d3725b", "#cd7746", "#ba6a00", "#eb8119", "#ab6141", "#e8926e", "#ffab37", "#ee9547"];
-        var reds = ["#c94300", "#7b1416", "#d7000b", "#8c412a", "#e76753", "#ea4627", "#b80716"];
-        var pinks = ["#7b536e", "#d9b1b0", "#f3bbaa", "#a16c6a", "#745a7b", "#e76753", "#e8926e", "#7b3446", "#ff9aac", "#ef447a", "#cdaad2", "#b83e81"];
-        var grays = ["#c5bde1", "#a8a8a8", "#78787b"];
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__custompalette_custompalette__["a" /* CustomPalettePage */], {
-            'blues': blues,
-            'browns': browns,
-            'greens': greens,
-            'yellows': yellows,
-            'creams': creams,
-            'purples': purples,
-            'oranges': oranges,
-            'reds': reds,
-            'pinks': pinks,
-            'grays': grays,
-            'theme': "custom"
-        });
-    };
-    EmailPage = __decorate([
+    CustomFontPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-email',template:/*ion-inline-start:"C:\Users\emmas\Desktop\hucomm\src\pages\email\email.html"*/'\n\n<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">\n\n\n\n\n\n<script>\n\nvar emailDoc = version.document || version.contentDocument;\n\n// ...and then\n\ncurrentEmail = versionDoc.getElementById("selectedEmail").value;\n\n</script>\n\n\n\n<ion-content no-padding>\n\n  <div (click)="savedThemes()" style="background-color:#8bb2c6;color:white;z-index: 6;position:fixed;left:20px;top:0px;padding:10px;">saved themes\n\n  </div>\n\n  <ion-grid class="vertical-align-content" style="padding:0px;">\n\n    <!-- <ion-row style="position:relative;">\n\n\n\n      <ion-col col-3></ion-col>\n\n      <ion-col col-2>\n\n        <div class="circle" (click)="navigateToHomePage()" style="background-color:#9c9c9c; color:white;">theme</div>\n\n      </ion-col>\n\n      <ion-col col-2>\n\n        <div class="circle" (click)="navigateToPalletePage()" style="background-color:#9c9c9c; color:white;">colors</div>\n\n      </ion-col>\n\n      <ion-col col-2>\n\n        <div class="circle" style="background-color:#9c9c9c; color:white;">fonts</div>\n\n      </ion-col>\n\n      <ion-col col-3></ion-col>\n\n      <div  style="width:100%; height:9vh; text-align:center; padding-top: 20px; font-size:140%">your selections</div>\n\n    </ion-row> -->\n\n    <ion-row style="width:100%; text-align:center; padding-top:20px;height:15vh;margin:5px;font-style: italic;">\n\n      <ion-col col-12 style="padding:15px;padding-top:30px;">\n\n        <span style="font-family: \'La Belle Aurore\', cursive;font-size:180%;">your selected theme</span>\n\n      </ion-col>\n\n    </ion-row>\n\n    <ion-row >\n\n      <ion-col class = "col col-12" style="width:21%;border-bottom: 1px solid #cecece; padding-bottom: 10px;margin-bottom:31px;">colors</ion-col>\n\n    </ion-row>\n\n    <ion-row>\n\n      <ion-col class="col col-3">\n\n        <div class="tear" [style.background-color]="color1" style="display:inline-block !important;"></div>\n\n      </ion-col>\n\n      <ion-col class="col col-3">\n\n        <div class="tear" [style.background-color]="color2" style="display:inline-block !important;"></div>\n\n      </ion-col>\n\n      <ion-col class="col col-3">\n\n        <div class="tear" [style.background-color]="color3" style="display:inline-block !important;"></div>\n\n      </ion-col>\n\n      <ion-col class="col col-3">\n\n        <div class="tear" [style.background-color]="color4" style="display:inline-block !important;"></div>\n\n      </ion-col>\n\n    </ion-row><br>\n\n    <ion-row style="font-size: 80%;">\n\n      <ion-col class="col col-3" >{{color1}}</ion-col>\n\n      <ion-col class="col col-3">{{color2}}</ion-col>\n\n      <ion-col class="col col-3">{{color3}}</ion-col>\n\n      <ion-col class="col col-3">{{color4}}</ion-col>\n\n    </ion-row>\n\n    <!-- <ion-row>\n\n      <ion-col class = "col col-6">\n\n          <div class="tear summary" [id]="color1" [style.background-color]="color1" style="display:inline-block !important;margin:10px;"></div>\n\n          <br>{{color1}}\n\n      </ion-col>\n\n      <ion-col class = "col col-6">\n\n          <div class="tear summary" [id]="color2" [style.background-color]="color2" style="display:inline-block !important;margin:10px;"></div>\n\n            <br>{{color2}}\n\n      </ion-col>\n\n    </ion-row>\n\n    <ion-row>\n\n      <ion-col class = "col col-6">\n\n          <div class="tear summary" [id]="color3" [style.background-color]="color3" style="display:inline-block !important;margin:10px;"></div>\n\n            <br>{{color3}}\n\n      </ion-col>\n\n      <ion-col class = "col col-6">\n\n          <div class="tear summary" [id]="color4" [style.background-color]="color4" style="display:inline-block !important;margin:10px;"></div>\n\n            <br>{{color4}}\n\n      </ion-col>\n\n    </ion-row> -->\n\n    <br><br>\n\n    <ion-row >\n\n      <ion-col class = "col col-12" style="width:21%;border-bottom: 1px solid #cecece; padding-bottom: 10px;margin-bottom:10px;">fonts</ion-col>\n\n    </ion-row>\n\n    <ion-row>\n\n      <ion-col class="col col-12" style="text-align:center;"><h1>font 1</h1></ion-col>\n\n    </ion-row>\n\n    <ion-row>\n\n      <ion-col class="col col-12" style="text-align:center;"><h2>font 2</h2></ion-col>\n\n    </ion-row>\n\n    <br><br>\n\n\n\n        <button  (click)="sendEmail()" style= "font-size: 140%;width: 100%; height: 6vh; background-color: #c4bb6f; color: white; text-align:center; padding-left:26%;">email the css code</button>\n\n        <button   (click)="triggerSaveTheme()" style= "width: 100%; font-size: 140%;height: 6vh; background-color: #8bb2c6; color: white;padding-left:29%;">save your theme</button>\n\n        <div id=saveThemeCard style="display:none !important;padding:30px;">\n\n          <ion-item id=themeNameInput style="margin-right:5px;">\n\n            <!-- <ion-label floating>Name your theme ...</ion-label> -->\n\n            <ion-input id=inputofname placeholder="name your theme..." type="text" [(ngModel)]="themeName" style="width:45%;"></ion-input>\n\n          </ion-item>\n\n          <button ion-button full  style= "width:25vw;background-color:#abbc89;color:white;" id="saveButton" (click)="saveTheme()">save</button>\n\n        </div>\n\n        <button  (click)="startNewTheme()" style= "width: 100%; font-size: 140%;height: 6vh; background-color: #a09f9f; color: white;padding-left:29%;">start new theme</button>\n\n\n\n\n\n    <ion-row id="hometop" style="position:  !important; width:100%; bottom:0px;vertical-align:top ;border-top:1px solid #d3d3d3 !important;">\n\n      <!-- <ion-col col-3></ion-col> -->\n\n\n\n      <ion-col col-4 (click)="navigateToHomePage()" style=" height:100%;padding:15px;padding-top:13px;padding-bottom:3px;font-size:140%;background-color: #f7f4f4;border-bottom:10px solid #abbc89;">\n\n        <img style="height:20px;width:20px;"id=chosenTheme [src]= "theme">\n\n      </ion-col>\n\n      <ion-col col-4 (click)="navigateToPalletePage()" style="height:100%;padding:10px;font-size:140%;background-color: #f7f4f4;border-bottom:10px solid #c1775d;">\n\n        <div class="tear3" [style.background-color]="color1" style="display:inline-block !important;"></div>\n\n        <div class="tear3" [style.background-color]="color2" style="display:inline-block !important;"></div>\n\n        <div class="tear3" [style.background-color]="color3" style="display:inline-block !important;"></div>\n\n        <div class="tear3" [style.background-color]="color4" style="display:inline-block !important;"></div>\n\n      </ion-col>\n\n      <ion-col col-4 style="padding:12px;font-size:140%;background-color: #f7f4f4;height:100%;border-bottom:10px solid #c4bb6f;">\n\n        fonts\n\n      </ion-col>\n\n    </ion-row>\n\n\n\n\n\n  </ion-grid>\n\n\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\emmas\Desktop\hucomm\src\pages\email\email.html"*/
+            selector: 'page-customfont',template:/*ion-inline-start:"C:\Users\emmas\Desktop\hucomm\src\pages\customfont\customfont.html"*/'\n\n\n\n\n\n<ion-content no-padding>\n\n  <div (click)="savedThemes()" style="background-color:#8bb2c6;color:white;z-index: 6;position:fixed;left:20px;top:0px;padding:10px;">saved themes\n\n  </div>\n\n  <ion-grid style="padding:0px;">\n\n    <ion-row id="hometop" style="position: fixed; width:100%; bottom:0px;vertical-align:top ;border-top:1px solid #d3d3d3 !important;">\n\n      <!-- <ion-col col-3></ion-col> -->\n\n\n\n      <ion-col col-4 (click)="navigateToHomePage()" style=" padding:15px;padding-top:13px;padding-bottom:3px;font-size:140%;background-color:#f7f4f4;border-bottom:10px solid #abbc89;">\n\n        <img style="height:23px;width:23px;"id=chosenTheme [src]= "theme">\n\n      </ion-col>\n\n      <ion-col col-4 (click)="navigateToPalletePage()" style="padding:15px;padding-top:10px;font-size:140%;background-color:#f7f4f4;border-bottom:10px solid #c1775d;">\n\n        <div class="tear3" [style.background-color]="color1" style="display:inline-block !important;"></div>\n\n        <div class="tear3" [style.background-color]="color2" style="display:inline-block !important;"></div>\n\n        <div class="tear3" [style.background-color]="color3" style="display:inline-block !important;"></div>\n\n        <div class="tear3" [style.background-color]="color4" style="display:inline-block !important;"></div>\n\n      </ion-col>\n\n      <ion-col col-4 style="padding:12px;font-size:140%;background-color:#c4bb6f;color:white;">\n\n        fonts\n\n      </ion-col>\n\n    </ion-row>\n\n  </ion-grid>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\emmas\Desktop\hucomm\src\pages\customfont\customfont.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavParams */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_email_composer__["a" /* EmailComposer */], __WEBPACK_IMPORTED_MODULE_5__providers_save_theme_save_theme__["a" /* SaveThemeProvider */]])
-    ], EmailPage);
-    return EmailPage;
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavParams */]])
+    ], CustomFontPage);
+    return CustomFontPage;
 }());
 
-//# sourceMappingURL=email.js.map
+//# sourceMappingURL=customfont.js.map
 
 /***/ }),
 
-/***/ 202:
+/***/ 203:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(203);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(225);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(204);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(226);
 
 
 Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_1__app_module__["a" /* AppModule */]);
@@ -692,32 +945,34 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 
 /***/ }),
 
-/***/ 225:
+/***/ 226:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__(31);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__(32);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(194);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_status_bar__ = __webpack_require__(196);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(195);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_status_bar__ = __webpack_require__(197);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_native_email_composer__ = __webpack_require__(102);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__app_component__ = __webpack_require__(275);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_home_home__ = __webpack_require__(197);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_palette_palette__ = __webpack_require__(198);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_custompalette_custompalette__ = __webpack_require__(104);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_email_email__ = __webpack_require__(201);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_font_font__ = __webpack_require__(199);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_saved_saved__ = __webpack_require__(40);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__providers_save_theme_save_theme__ = __webpack_require__(103);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__ionic_storage__ = __webpack_require__(200);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__app_component__ = __webpack_require__(276);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_home_home__ = __webpack_require__(198);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_palette_palette__ = __webpack_require__(199);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_custompalette_custompalette__ = __webpack_require__(105);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_email_email__ = __webpack_require__(104);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_font_font__ = __webpack_require__(200);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_saved_saved__ = __webpack_require__(28);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_customfont_customfont__ = __webpack_require__(202);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__providers_save_theme_save_theme__ = __webpack_require__(103);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__ionic_storage__ = __webpack_require__(201);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -745,14 +1000,15 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_9__pages_custompalette_custompalette__["a" /* CustomPalettePage */],
                 __WEBPACK_IMPORTED_MODULE_10__pages_email_email__["a" /* EmailPage */],
                 __WEBPACK_IMPORTED_MODULE_11__pages_font_font__["a" /* FontPage */],
-                __WEBPACK_IMPORTED_MODULE_12__pages_saved_saved__["a" /* SavedPage */]
+                __WEBPACK_IMPORTED_MODULE_12__pages_saved_saved__["a" /* SavedPage */],
+                __WEBPACK_IMPORTED_MODULE_13__pages_customfont_customfont__["a" /* CustomFontPage */]
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
                 __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["c" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_6__app_component__["a" /* MyApp */], {}, {
                     links: []
                 }),
-                __WEBPACK_IMPORTED_MODULE_14__ionic_storage__["a" /* IonicStorageModule */].forRoot()
+                __WEBPACK_IMPORTED_MODULE_15__ionic_storage__["a" /* IonicStorageModule */].forRoot()
             ],
             bootstrap: [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["a" /* IonicApp */]],
             entryComponents: [
@@ -762,12 +1018,13 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_9__pages_custompalette_custompalette__["a" /* CustomPalettePage */],
                 __WEBPACK_IMPORTED_MODULE_10__pages_email_email__["a" /* EmailPage */],
                 __WEBPACK_IMPORTED_MODULE_11__pages_font_font__["a" /* FontPage */],
-                __WEBPACK_IMPORTED_MODULE_12__pages_saved_saved__["a" /* SavedPage */]
+                __WEBPACK_IMPORTED_MODULE_12__pages_saved_saved__["a" /* SavedPage */],
+                __WEBPACK_IMPORTED_MODULE_13__pages_customfont_customfont__["a" /* CustomFontPage */]
             ],
             providers: [
                 __WEBPACK_IMPORTED_MODULE_4__ionic_native_status_bar__["a" /* StatusBar */],
                 __WEBPACK_IMPORTED_MODULE_5__ionic_native_email_composer__["a" /* EmailComposer */],
-                __WEBPACK_IMPORTED_MODULE_13__providers_save_theme_save_theme__["a" /* SaveThemeProvider */],
+                __WEBPACK_IMPORTED_MODULE_14__providers_save_theme_save_theme__["a" /* SaveThemeProvider */],
                 __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */],
                 { provide: __WEBPACK_IMPORTED_MODULE_1__angular_core__["u" /* ErrorHandler */], useClass: __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["b" /* IonicErrorHandler */] }
             ]
@@ -780,16 +1037,16 @@ var AppModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 275:
+/***/ 276:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyApp; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(196);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(194);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_home_home__ = __webpack_require__(197);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(197);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(195);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_home_home__ = __webpack_require__(198);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -826,13 +1083,13 @@ var MyApp = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 40:
+/***/ 28:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SavedPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_email_composer__ = __webpack_require__(102);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_save_theme_save_theme__ = __webpack_require__(103);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -914,5 +1171,5 @@ var SavedPage = /** @class */ (function () {
 
 /***/ })
 
-},[202]);
+},[203]);
 //# sourceMappingURL=main.js.map

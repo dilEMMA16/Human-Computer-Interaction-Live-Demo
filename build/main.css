@@ -25787,6 +25787,96 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 */
+page-customfont * {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  position: relative;
+}
+
+page-customfont .circle {
+  position: relative;
+  display: inline-block;
+  width: 55px;
+  height: 55px;
+  padding: 20px 0;
+  border-radius: 50%;
+  border: 1px solid #9c9c9c;
+  color: #9c9c9c;
+  font-family: 'Josefin Slab', serif;
+  font-size: 100%;
+  text-align: center;
+}
+
+page-customfont #hometop {
+  height: 8vh;
+}
+
+page-customfont ion-content {
+  font-family: 'Montserrat', sans-serif;
+  color: #9c9c9c !important;
+}
+
+page-customfont h1 {
+  font-size: 160%;
+  margin-top: 0px;
+}
+
+page-customfont .active {
+  -webkit-transform: rotate(45deg) !important;
+  transform: rotate(45deg) !important;
+}
+
+page-customfont ion-row {
+  text-align: center;
+}
+
+page-customfont #chosenTheme {
+  width: 30px;
+  height: 30px;
+}
+
+page-customfont ion-col {
+  padding: 3px;
+}
+
+page-customfont .vertical-align-content > * {
+  display: -webkit-box !important;
+  display: -webkit-flex !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+  -webkit-align-content: center !important;
+  -ms-flex-line-pack: center !important;
+  align-content: center !important;
+  -webkit-box-align: center !important;
+  -webkit-align-items: center !important;
+  -ms-flex-align: center !important;
+  align-items: center !important;
+}
+
+page-customfont .align-bottom {
+  -webkit-box-align: end !important;
+  -webkit-align-items: flex-end !important;
+  -ms-flex-align: end !important;
+  align-items: flex-end !important;
+  -webkit-align-content: flex-end !important;
+  -ms-flex-line-pack: end !important;
+  align-content: flex-end !important;
+}
+
+page-customfont .tear3 {
+  display: inline;
+  -webkit-transform: rotate(135deg);
+  transform: rotate(135deg);
+  background-color: green;
+  width: 14px;
+  height: 14px;
+  border-top-left-radius: 50%;
+  border-bottom-left-radius: 50%;
+  border-bottom-right-radius: 50%;
+  color: white;
+  text-align: center;
+}
+
 page-custompalette * {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
