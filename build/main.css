@@ -25793,6 +25793,76 @@ page-customfont * {
   position: relative;
 }
 
+page-customfont #formattedinstructions {
+  font-family: 'La Belle Aurore', cursive;
+  font-size: 180%;
+}
+
+page-customfont #savedthemesbookmark {
+  background-color: #abbc89;
+  color: white;
+  z-index: 6;
+  position: fixed;
+  left: 20px;
+  top: 0px;
+  padding: 10px;
+}
+
+page-customfont #categorytab {
+  padding: 15px;
+  padding-top: 13px;
+  padding-bottom: 3px;
+  font-size: 140%;
+  background-color: #f7f4f4;
+  border-bottom: 10px solid #8bb2c6;
+}
+
+page-customfont #palettetab {
+  padding: 10px;
+  padding-top: 10px;
+  font-size: 140%;
+  background-color: #f7f4f4;
+  border-bottom: 10px solid #c1775d;
+}
+
+page-customfont #fonttab {
+  padding: 12px;
+  font-size: 140%;
+  height: 100%;
+  background-color: #c4bb6f;
+  color: white;
+}
+
+page-customfont #instructionrow {
+  width: 100%;
+  text-align: center;
+  padding: 5px;
+  padding-top: 20px;
+  height: 15vh;
+  margin: 5px;
+  font-style: italic;
+}
+
+page-customfont .fontsToChooseFrom {
+  text-align: center;
+  padding: 5px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+page-customfont .fontsToChooseFromRow {
+  text-align: center;
+  border-bottom: 1px solid #cecece;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  font-size: 1.2em;
+  height: auto;
+}
+
+page-customfont .tearblock {
+  display: inline-block !important;
+}
+
 page-customfont .circle {
   position: relative;
   display: inline-block;
@@ -25807,8 +25877,100 @@ page-customfont .circle {
   text-align: center;
 }
 
-page-customfont #hometop {
+page-customfont #menubottom {
   height: 8vh;
+  position: -webkit-sticky;
+  position: sticky;
+  width: 100%;
+  bottom: 0px;
+  vertical-align: top;
+  border-top: 1px solid #d3d3d3 !important;
+}
+
+page-customfont #headerbutton {
+  font-size: 140%;
+  width: 100%;
+  height: auto;
+  background-color: #55707b;
+  padding-top: 10vh;
+  padding-bottom: 11vh;
+  color: white;
+  text-align: center;
+  padding-left: 6%;
+}
+
+page-customfont #headerDiv {
+  display: none;
+  padding-bottom: 10px;
+  height: auto;
+}
+
+page-customfont #confirmError {
+  color: #c1775d;
+  font-weight: bold;
+  border-left: solid 10px #c1775d;
+  background-color: #E5C7BD;
+  padding: 15px;
+  text-align: center;
+  display: none;
+}
+
+page-customfont #showclickedheaderDiv {
+  line-height: 1.6;
+  text-align: center;
+  background-color: #6e9589;
+  color: white;
+  padding-bottom: 25px;
+  padding-top: 25px;
+  font-size: 1.8em;
+  height: auto;
+  display: none;
+  height: auto;
+}
+
+page-customfont #bodybutton {
+  width: 100%;
+  font-size: 140%;
+  height: auto;
+  background-color: #8bb2c6;
+  padding-top: 10vh;
+  padding-bottom: 11vh;
+  color: white;
+  padding-left: 6%;
+}
+
+page-customfont #bodyDiv {
+  display: none;
+  padding-bottom: 10px;
+  height: auto;
+}
+
+page-customfont #showclickedbodyDiv {
+  line-height: 1.6;
+  text-align: center;
+  background-color: #aac6d5;
+  color: white;
+  padding-bottom: 25px;
+  padding-top: 25px;
+  font-size: 1.8em;
+  height: auto;
+  display: none;
+  height: auto;
+}
+
+page-customfont #confirmButton {
+  position: -webkit-sticky;
+  position: sticky;
+  margin-top: 0vh;
+  bottom: 8vh;
+  width: 100%;
+  font-size: 140%;
+  height: auto;
+  padding-top: 5vh;
+  padding-bottom: 5vh;
+  background-color: #abbc89;
+  color: white;
+  padding-left: 6%;
 }
 
 page-customfont ion-content {
@@ -25883,6 +26045,70 @@ page-custompalette * {
   position: relative;
 }
 
+page-custompalette #savedThemesBookmark {
+  background-color: #abbc89;
+  z-index: 6;
+  color: white;
+  position: fixed;
+  left: 20px;
+  top: 0px;
+  padding: 10px;
+}
+
+page-custompalette #instructionRow {
+  width: 100%;
+  text-align: center;
+  padding-top: 20px;
+  height: 15vh;
+  margin: 5px;
+  font-style: italic;
+}
+
+page-custompalette #formattedinstructiontext {
+  font-family: 'La Belle Aurore', cursive;
+  font-size: 180%;
+}
+
+page-custompalette #categorytab {
+  padding: 15px;
+  padding-top: 13px;
+  padding-bottom: 3px;
+  font-size: 140%;
+  background-color: #f7f4f4;
+  height: 100%;
+  border-bottom: 10px solid #8bb2c6;
+}
+
+page-custompalette #palettetab {
+  padding: 12px;
+  font-size: 140%;
+  background-color: #c1775d;
+  color: white;
+  height: 100%;
+}
+
+page-custompalette #fonttab {
+  padding: 12px;
+  font-size: 140%;
+  background-color: #e8e5e5;
+  height: 100%;
+  text-decoration: line-through;
+}
+
+page-custompalette .sectiontitle {
+  width: 21%;
+  border-bottom: 1px solid #cecece;
+  padding-bottom: 10px;
+  margin-bottom: 40px;
+}
+
+page-custompalette .divforcolors {
+  width: 25%;
+  float: left;
+  height: 90px;
+  margin: auto;
+}
+
 page-custompalette .circle {
   position: relative;
   display: inline-block;
@@ -25916,13 +26142,25 @@ page-custompalette ion-row {
   text-align: center;
 }
 
-page-custompalette #hometop {
+page-custompalette #menubottom {
   height: 8vh;
+  position: -webkit-sticky;
+  position: sticky;
+  width: 100%;
+  bottom: 0px;
+  vertical-align: top;
+  border-top: 1px solid #d3d3d3 !important;
 }
 
 page-custompalette #chosenTheme {
   width: 30px;
   height: 30px;
+}
+
+page-custompalette .splat {
+  width: 25vw !important;
+  height: 100%;
+  display: none;
 }
 
 page-custompalette .tear {
@@ -25937,6 +26175,8 @@ page-custompalette .tear {
   border-bottom-right-radius: 50%;
   color: white;
   text-align: center;
+  margin: 20px auto auto;
+  padding: 3px;
 }
 
 page-custompalette .tear2 {
@@ -25952,6 +26192,8 @@ page-custompalette .tear2 {
   border-bottom-right-radius: 50%;
   color: white;
   text-align: center;
+  margin: 20px;
+  margin-bottom: 30px;
 }
 
 page-custompalette ion-col {
@@ -25988,6 +26230,84 @@ page-email * {
   position: relative;
 }
 
+page-email #savedthemebookmark {
+  background-color: #abbc89;
+  color: white;
+  z-index: 6;
+  position: fixed;
+  left: 20px;
+  top: 0px;
+  padding: 10px;
+}
+
+page-email #instructrow {
+  width: 100%;
+  text-align: center;
+  padding-top: 20px;
+  height: 15vh;
+  margin: 5px;
+  font-style: italic;
+}
+
+page-email #formattedinstruct {
+  font-family: 'La Belle Aurore', cursive;
+  font-size: 180%;
+}
+
+page-email #colortitle {
+  width: 21%;
+  border-bottom: 1px solid #cecece;
+  padding-bottom: 10px;
+  margin-bottom: 31px;
+}
+
+page-email #fonttitle {
+  width: 21%;
+  border-bottom: 1px solid #cecece;
+  padding-bottom: 15px;
+  margin-bottom: 10px;
+}
+
+page-email #divforhead {
+  text-align: center;
+  font-size: 1.75em;
+  padding: 0px !important;
+}
+
+page-email #divforbody {
+  text-align: center;
+  font-size: 1em;
+  padding: 0px !important;
+}
+
+page-email #triggersavebutton {
+  width: 100%;
+  font-size: 140%;
+  height: 6vh;
+  background-color: #abbc89;
+  color: white;
+  padding-left: 29%;
+}
+
+page-email #saveThemeCard {
+  padding: 20px;
+}
+
+page-email #themeNameInput {
+  margin-right: 5px;
+}
+
+page-email #inputofname {
+  width: 45%;
+  color: #9c9c9c !important;
+}
+
+page-email #saveButton {
+  width: 25vw;
+  background-color: #abbc89;
+  color: white;
+}
+
 page-email .circle {
   position: relative;
   display: inline-block;
@@ -26002,8 +26322,38 @@ page-email .circle {
   text-align: center;
 }
 
-page-email #hometop {
+page-email #menubottom {
   height: 8vh;
+  bottom: 0 !important;
+  width: 100%;
+  vertical-align: top;
+  border-top: 1px solid #d3d3d3 !important;
+}
+
+page-email #categorytab {
+  height: 100%;
+  padding: 15px;
+  padding-top: 13px;
+  padding-bottom: 3px;
+  font-size: 140%;
+  background-color: #f7f4f4;
+  border-bottom: 10px solid #8bb2c6;
+}
+
+page-email #palletetab {
+  height: 100%;
+  padding: 10px;
+  font-size: 140%;
+  background-color: #f7f4f4;
+  border-bottom: 10px solid #c1775d;
+}
+
+page-email #fonttab {
+  padding: 9px;
+  font-size: 140%;
+  background-color: #f7f4f4;
+  height: 100%;
+  border-bottom: 10px solid #c4bb6f;
 }
 
 page-email ion-content {
@@ -26028,6 +26378,25 @@ page-email ion-row {
 page-email #chosenTheme {
   width: 30px;
   height: 30px;
+}
+
+page-email #startnewbutton {
+  width: 100%;
+  font-size: 140%;
+  height: 6vh;
+  background-color: #8bb2c6;
+  color: white;
+  padding-left: 29%;
+}
+
+page-email #sendemailbutton {
+  font-size: 140%;
+  width: 100%;
+  height: 6vh;
+  background-color: #c4bb6f;
+  color: white;
+  text-align: center;
+  padding-left: 26%;
 }
 
 page-email .tear {
@@ -26112,8 +26481,87 @@ page-font .circle {
   text-align: center;
 }
 
-page-font #hometop {
+page-font #formatinstruct {
+  font-family: 'La Belle Aurore', cursive;
+  font-size: 180%;
+}
+
+page-font .rowforpair {
+  height: 13vh;
+  margin-bottom: 5px;
+  padding: 20px;
+}
+
+page-font .fontpairbox {
+  border-bottom: 1px solid #cecece;
+  padding-bottom: 10px;
+  line-height: 1.8;
+}
+
+page-font .head {
+  font-size: 1.75em;
+}
+
+page-font .body {
+  font-size: 1em;
+}
+
+page-font .title {
+  font-size: 80%;
+}
+
+page-font #instructrow {
+  width: 100%;
+  text-align: center;
+  padding: 5px;
+  padding-top: 20px;
+  height: 15vh;
+  margin: 5px;
+  font-style: italic;
+}
+
+page-font #savedthemesbookmark {
+  background-color: #abbc89;
+  color: white;
+  z-index: 6;
+  position: fixed;
+  left: 20px;
+  top: 0px;
+  padding: 10px;
+}
+
+page-font #menubottom {
   height: 8vh;
+  position: fixed;
+  width: 100%;
+  bottom: 0px;
+  vertical-align: top;
+  border-top: 1px solid #d3d3d3 !important;
+}
+
+page-font #categorytab {
+  padding: 15px;
+  padding-top: 13px;
+  padding-bottom: 3px;
+  font-size: 140%;
+  background-color: #f7f4f4;
+  border-bottom: 10px solid #8bb2c6;
+}
+
+page-font #palletetab {
+  padding: 10px;
+  padding-top: 10px;
+  font-size: 140%;
+  background-color: #f7f4f4;
+  border-bottom: 10px solid #c1775d;
+}
+
+page-font #fonttab {
+  padding: 12px;
+  font-size: 140%;
+  height: 100%;
+  background-color: #c4bb6f;
+  color: white;
 }
 
 page-font ion-content {
@@ -26219,8 +26667,37 @@ page-home ion-row {
   text-align: center;
 }
 
-page-home #hometop {
+page-home #menubottom {
   height: 8vh;
+  position: fixed;
+  width: 100%;
+  bottom: 0px;
+  border-top: 1px solid #cecece;
+  vertical-align: top;
+}
+
+page-home #categorytab {
+  padding: 12px;
+  font-size: 140%;
+  background-color: #8bb2c6;
+  color: #fff;
+  height: 100%;
+}
+
+page-home #fonttab {
+  padding: 12px;
+  font-size: 140%;
+  background-color: #e8e5e5;
+  height: 100%;
+  text-decoration: line-through;
+}
+
+page-home #palletetab {
+  padding: 12px;
+  font-size: 140%;
+  background-color: #e8e5e5;
+  height: 100%;
+  text-decoration: line-through;
 }
 
 page-home .progress-outer {
@@ -26234,6 +26711,40 @@ page-home .progress-outer {
   border: 1px solid #dcdcdc;
   color: #fff;
   border-radius: 20px;
+}
+
+page-home #savethemesbookmark {
+  background-color: #abbc89;
+  z-index: 6;
+  color: white;
+  position: fixed;
+  left: 20px;
+  top: 0px;
+  padding: 10px;
+}
+
+page-home #instructformat {
+  font-family: 'La Belle Aurore', cursive;
+  font-size: 180%;
+}
+
+page-home #instructrow {
+  width: 100%;
+  text-align: center;
+  padding-top: 20px;
+  height: 15vh;
+  margin: 5px;
+  font-style: italic;
+}
+
+page-home .imagerow {
+  margin-bottom: 5px;
+}
+
+page-home .titlerow {
+  height: 5vh;
+  margin-bottom: 15px;
+  font-size: 80%;
 }
 
 page-home .progress-inner {
@@ -26299,6 +26810,44 @@ page-palette ion-row {
   text-align: center !important;
 }
 
+page-palette #savedthemebookmark {
+  background-color: #abbc89;
+  color: white;
+  position: fixed;
+  left: 20px;
+  top: 0px;
+  padding: 10px;
+  z-index: 6;
+}
+
+page-palette #instructrow {
+  width: 100%;
+  text-align: center;
+  padding: 5px;
+  padding-top: 20px;
+  height: 15vh;
+  margin: 5px;
+  font-style: italic;
+}
+
+page-palette #formatinstruct {
+  font-family: 'La Belle Aurore', cursive;
+  font-size: 180%;
+}
+
+page-palette .palettebox {
+  font-size: 80%;
+}
+
+page-palette .palettediv {
+  width: 21%;
+  border-bottom: 1px solid #cecece;
+  padding: 5px;
+  padding-bottom: 10px;
+  padding-top: 33px;
+  font-size: 80%;
+}
+
 page-palette ion-content {
   font-family: 'Montserrat', sans-serif;
   color: #9c9c9c !important;
@@ -26320,13 +26869,45 @@ page-palette .circle {
   text-align: center;
 }
 
-page-palette #hometop {
+page-palette #menubottom {
   height: 8vh;
+  position: fixed;
+  width: 100vw;
+  z-index: 3;
+  bottom: 0px;
+  vertical-align: top;
+  border-top: 1px solid #d3d3d3 !important;
 }
 
 page-palette #chosenTheme {
   width: 30px;
   height: 30px;
+}
+
+page-palette #categorytab {
+  padding: 15px;
+  padding-top: 13px;
+  padding-bottom: 3px;
+  font-size: 140%;
+  background-color: #f7f4f4;
+  height: 100%;
+  border-bottom: 10px solid #8bb2c6;
+}
+
+page-palette #palletetab {
+  padding: 12px;
+  font-size: 140%;
+  background-color: #c1775d;
+  color: white;
+  height: 100%;
+}
+
+page-palette #fonttab {
+  padding: 12px;
+  font-size: 140%;
+  background-color: #e8e5e5;
+  height: 100%;
+  text-decoration: line-through;
 }
 
 page-palette .tear {
@@ -26359,6 +26940,103 @@ page-randomemail * {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   position: relative;
+}
+
+page-randomemail #savedthemebookmark {
+  background-color: #abbc89;
+  color: white;
+  z-index: 6;
+  position: fixed;
+  left: 20px;
+  top: 0px;
+  padding: 10px;
+}
+
+page-randomemail #instructrow {
+  width: 100%;
+  text-align: center;
+  padding-top: 20px;
+  height: 15vh;
+  margin: 5px;
+  font-style: italic;
+}
+
+page-randomemail #instructformat {
+  font-family: 'La Belle Aurore', cursive;
+  font-size: 180%;
+}
+
+page-randomemail #colortitle {
+  width: 21%;
+  border-bottom: 1px solid #cecece;
+  padding-bottom: 10px;
+  margin-bottom: 31px;
+}
+
+page-randomemail #fonttitle {
+  width: 21%;
+  border-bottom: 1px solid #cecece;
+  padding-bottom: 15px;
+  margin-bottom: 10px;
+}
+
+page-randomemail #head {
+  text-align: center;
+  font-size: 1.75em;
+  padding: 0px !important;
+}
+
+page-randomemail #body {
+  text-align: center;
+  font-size: 1em;
+  padding: 0px !important;
+}
+
+page-randomemail #triggersavebutton {
+  width: 100%;
+  font-size: 140%;
+  height: 6vh;
+  background-color: #abbc89;
+  color: white;
+  padding-left: 29%;
+}
+
+page-randomemail #saveThemeCard {
+  padding: 20px;
+}
+
+page-randomemail #themeNameInput {
+  margin-right: 5px;
+}
+
+page-randomemail #inputofname {
+  width: 45%;
+  color: #9c9c9c !important;
+}
+
+page-randomemail #saveButton {
+  width: 25vw;
+  background-color: #abbc89;
+  color: white;
+}
+
+page-randomemail #newTheme {
+  width: 100%;
+  font-size: 140%;
+  height: 14vh;
+  background-color: #8bb2c6;
+  color: white;
+  padding-left: 26%;
+}
+
+page-randomemail #emailbutton {
+  font-size: 140%;
+  width: 100%;
+  height: 6vh;
+  background-color: #c4bb6f;
+  color: white;
+  text-align: center;
+  padding-left: 26%;
 }
 
 page-randomemail .circle {
@@ -26474,11 +27152,35 @@ page-saved ion-row {
   text-align: center !important;
 }
 
+page-saved #backbutton {
+  background-color: #abbc89;
+  z-index: 6;
+  color: white;
+  position: fixed;
+  left: 20px;
+  top: 0px;
+  padding: 10px;
+}
+
 page-saved ion-content {
   font-family: 'Montserrat', sans-serif;
   color: #9c9c9c !important;
   font-size: 100%;
   text-align: center;
+}
+
+page-saved #inforow {
+  width: 100%;
+  text-align: center;
+  padding-top: 20px;
+  height: 15vh;
+  margin: 5px;
+  font-style: italic;
+}
+
+page-saved #formatinfo {
+  font-family: 'La Belle Aurore', cursive;
+  font-size: 180%;
 }
 
 page-saved .circle {
@@ -26493,10 +27195,6 @@ page-saved .circle {
   font-family: 'Josefin Slab', serif;
   font-size: 100% !important;
   text-align: center;
-}
-
-page-saved #hometop {
-  height: 8vh;
 }
 
 page-saved #chosenTheme {
