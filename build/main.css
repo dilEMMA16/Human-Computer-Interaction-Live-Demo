@@ -25676,6 +25676,28 @@ ion-navbar.toolbar {
   min-height: calc(46px + env(safe-area-inset-bottom));
 }
 
+.redText button {
+  color: red !important;
+  margin: 35px !important;
+}
+
+.grayText {
+  font-family: 'Montserrat', sans-serif;
+  text-align: center !important;
+}
+
+.grayText h2 {
+  color: #8c8c8c;
+  text-align: center;
+  font-family: 'La Belle Aurore', cursive;
+  font-size: 180% !important;
+}
+
+.grayText button {
+  margin: 5px auto !important;
+  color: #9c9c9c !important;
+}
+
 /*
 font-family: 'Catamaran', sans-serif;
 font-family: 'Raleway', sans-serif;
