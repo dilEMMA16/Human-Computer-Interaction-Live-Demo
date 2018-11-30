@@ -1277,6 +1277,7 @@ var SavedPage = /** @class */ (function () {
         });
         console.log(this.savedThemes);
     }
+    SavedPage_1 = SavedPage;
     SavedPage.prototype.navigateToHomePage = function () {
         this.navCtrl.pop();
     };
@@ -1321,6 +1322,11 @@ var SavedPage = /** @class */ (function () {
                     cssClass: 'redText',
                     handler: function () {
                         _this.deleteTheme(index);
+                        _this.navCtrl.pop();
+                        _this.navCtrl.push(SavedPage_1, {
+                            dummy: "dummy",
+                            dummy2: "dummy2"
+                        });
                     }
                 },
                 {
@@ -1334,13 +1340,14 @@ var SavedPage = /** @class */ (function () {
         });
         alert.present();
     };
-    SavedPage = __decorate([
+    SavedPage = SavedPage_1 = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-saved',template:/*ion-inline-start:"C:\Users\emmas\Desktop\hucomm\src\pages\saved\saved.html"*/'\n\n\n\n<ion-content no-padding>\n\n\n\n    <!-- BUTTON TO GO BACK TO PREVIOUS PAGE -->\n\n    <div (click)="navigateToHomePage()" id=backbutton>back\n\n    </div>\n\n    <ion-grid class="vertical-align-content" style="padding:5px;height:14%;">\n\n\n\n        <!-- PAGE INTO -->\n\n        <ion-row id=inforow>\n\n            <ion-col col-12 style="padding:15px;padding-top:30px;">\n\n                <span id=formatinfo>your saved themes</span>\n\n            </ion-col>\n\n        </ion-row>\n\n        <br>\n\n\n\n    </ion-grid>\n\n\n\n    <!-- LISTING ALL SAVED THEMES -->\n\n    <div id=savedthemesdiv>\n\n        <div *ngFor="let t of savedThemes; let i = index" id=savedDiv>\n\n            {{t.name}}<hr>\n\n            <button color=light id=email ion-button clear (click)="emailTheme(t)">email</button>\n\n            <span class=gray>|</span>\n\n            <button color=light id=delete ion-button clear (click)="presentConfirm(i)">delete</button>\n\n            <br><br>\n\n            <ion-grid>\n\n                <ion-row style="padding: 0 15px;">\n\n                    <ion-col class="col col-3">\n\n                        <div class=tear [style.background-color]="t.color1"></div>\n\n                    </ion-col>\n\n                    <ion-col class="col col-3">\n\n                        <div class=tear [style.background-color]="t.color2"></div>\n\n                    </ion-col>\n\n                    <ion-col class="col col-3">\n\n                        <div class=tear [style.background-color]="t.color3"></div>\n\n                    </ion-col>\n\n                    <ion-col class="col col-3">\n\n                        <div class=tear [style.background-color]="t.color4"></div>\n\n                    </ion-col>\n\n                </ion-row><br><br>\n\n                <ion-row style="font-size: 80%; padding: 0 15px;">\n\n                    <ion-col class="col col-3">{{t.color1}}</ion-col>\n\n                    <ion-col class="col col-3">{{t.color2}}</ion-col>\n\n                    <ion-col class="col col-3">{{t.color3}}</ion-col>\n\n                    <ion-col class="col col-3">{{t.color4}}</ion-col>\n\n                </ion-row>\n\n                <ion-row>\n\n                    <ion-col class="col col-6 gray"><h1 [style.font-family]="t.font1">{{t.font1}}</h1></ion-col>\n\n                    <ion-col class="col col-6 gray"><h2 [style.font-family]="t.font2">{{t.font2}}</h2></ion-col>\n\n                </ion-row>\n\n            </ion-grid>\n\n        </div>\n\n    </div>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\emmas\Desktop\hucomm\src\pages\saved\saved.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */], __WEBPACK_IMPORTED_MODULE_0__angular_core__["j" /* ChangeDetectorRef */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_email_composer__["a" /* EmailComposer */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */], __WEBPACK_IMPORTED_MODULE_3__providers_save_theme_save_theme__["a" /* SaveThemeProvider */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]])
     ], SavedPage);
     return SavedPage;
+    var SavedPage_1;
 }());
 
 //# sourceMappingURL=saved.js.map
